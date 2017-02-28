@@ -1,4 +1,4 @@
-# RDSでmysqldumpをうまく取ってリストアする方法
+# Gitでやらかした時に使える奥義
 
 ---
 
@@ -6,55 +6,67 @@
 
 ---
 
-![mysqldump001.png](https://qiita-image-store.s3.amazonaws.com/0/17518/ea747a74-f7ac-64af-1fb8-581185257b13.png "mysqldump001.png")
+![Kobito.36wG14.png](https://qiita-image-store.s3.amazonaws.com/0/77729/f4c13dc0-54cc-52e8-7e35-c93a39fff3ab.png "Kobito.36wG14.png")
 
 --
 
-* 集計しやすい
-  * 別DBのデータもjoinできる
-* 運用しやすい
-  * 本番DBに重いSQL投げたくない運用者
-  * 　　　〃　　　　投げててほしくない管理者
-  * 超最新データは無くてもいい
-
-</br>
-
-小〜中規模なら常套手段…ですよね？
-
----
-
-## よくあるmysqldump
-
----
-
-![mysldump002.png](https://qiita-image-store.s3.amazonaws.com/0/17518/b679a7c5-b75a-eea0-53f9-8c1e931e2046.png "mysldump002.png")
+* Commitをなかったことにしたい
+* Commitメッセージを変えたい
+* Commitをまとめたい
 
 --
 
-* サービスで使っているslaveからmysqldump
-  * MyISAM mysqldump取得中のlock
-  * サービスに影響を与えない取得方法はお金がかかる
-    * LVMでsnap shotとってとかさ…
-    * dump用のslave用意してとかさ…
+## やらかした時に使える奥義
+
+--
+
+### プッシュする前
+直前のCommitだけを修正する場合： **amend**
+Commitを消したい場合： **reset**
+古いCommitを修正する場合： **rebase**
 
 ---
 
-## 一方、RDSは…
-
----
-  
-最初のうちはMASTER DB１つで運用して
-</br>
-インスタンスサイズ大きくしていって
-</br>
-参照がボトルネックになってきたら
-</br>
-Read Replicaを用意するのがいい…らしい
+### プッシュした後
+Commitをなかったことにしたい：**revert**
+**Push後にはamend/reset/rebaseしちゃダメ！**
 
 ---
 
-## slaveが無い
-## 構成が多いのか…
+## （amend）コミットメッセージを書き直したい時
+
+---
+
+直前のコミットは、コミットした後に再度コミットボタンを押し、下記のように「最新のコミットを修正」を選択する。
+![Kobito.f0IUw5.png](https://qiita-image-store.s3.amazonaws.com/0/77729/079f5f87-3417-92bd-b338-dba0367c04b3.png "Kobito.f0IUw5.png")
+
+--
+
+## （rebase）古いコミットを書き直したい場合
+
+--
+
+**注：プッシュ後のコミットはrebaseしちゃダメ！！**
+直したいコミットの親コミットの上で、「xxxの子を対話形式でリベース」を選択
+![スクリーンショット 2017-02-28 21.47.07 1.png](https://qiita-image-store.s3.amazonaws.com/0/77729/e94532b3-7c57-d146-80f8-dc3ecab5df5c.png "スクリーンショット 2017-02-28 21.47.07 1.png")
+「メッセージを編集」でコミットメッセージを編集、
+またはドラッグ＆ドロップでコミットの順番を入れ替える
+![Kobito.uu6Kf5.png](https://qiita-image-store.s3.amazonaws.com/0/77729/3ed5e404-7683-0486-f0cb-e0195146bd70.png "Kobito.uu6Kf5.png")
+
+
+---
+
+## （rebase）直前のCommitから任意のCommitまでまとめたい
+
+---
+
+まとめたいコミットの上で「このコミットまでmasterを元に戻す」を選択。Using modeでSoftを選択してOK
+その後、新しくCommitすることでCommitをまとめることができます。
+![スクリーンショット 2017-02-28 21.26.34.png](https://qiita-image-store.s3.amazonaws.com/0/77729/a2cc3ddf-1fda-c555-a796-66350e2cc484.png "スクリーンショット 2017-02-28 21.26.34.png")
+
+---
+
+## （rebase）rebaseを中止する
 
 ---
 
@@ -62,160 +74,62 @@ Read Replicaを用意するのがいい…らしい
 
 ---
 
-## …その前に。
+すんませんこれだけSourcetreeの操作方法が見つかりませんでした。。。rebaseして何もしないまま終了したい場合などは、下記のcommandでがんばる。
+
+```
+$ git rebase --abort
+```
 
 ---
 
-## RDS基礎知識
-## Backup Window
+## （revert）プッシュ後だけどコミットをなかったことにしたい
 
 ---
 
-* Backup Window
-  * 毎日のバックアップの希望時間(UTC)を設定できる
-  * 指定時間の30分間の間にバックアップスナップショットが取得される
-
-![mysqldump003.png](https://qiita-image-store.s3.amazonaws.com/0/17518/c6c5321c-b9e8-ee12-a590-0cfc76312738.png "mysqldump003.png")
+「コミット適用前に戻す」を選択します。
+OKを押すと、「Revert コミット名」という名前の新しいコミットができます。
+**revertは履歴にのこる**
+![Kobito.2FZVWP.png](https://qiita-image-store.s3.amazonaws.com/0/77729/9696b1e6-3b24-e461-cc15-75afc6df3221.png "Kobito.2FZVWP.png")
 
 ---
 
-## そうか！
+## （reset）コミット内容をなかったことにしたい
 
 --- 
 
-## スナップショットから
-## 一時的にRDS作れば
-## mysqldump取得できる！
+戻したいコミットの上で「このコミットまでブランチ名を元に戻す」を選択。modeはSoftを選択してOK
+![スクリーンショット 2017-02-28 21.58.09.png](https://qiita-image-store.s3.amazonaws.com/0/77729/3ce64726-7ca7-fcef-b587-7c95d0da907d.png "スクリーンショット 2017-02-28 21.58.09.png")
 
 ---
 
-## 流れ
+## きんしじこう
 
 ---
 
-![mysqldump004.png](https://qiita-image-store.s3.amazonaws.com/0/17518/4b2118d8-6b3c-8971-7683-2ac30b504f91.png "mysqldump004.png")
+* push後にammend/reset/rebaseする
 
 ---
 
-## スナップショットから
-## RDSを作る
-## bashスクリプト
-
-図の(2),(3)
-
+![Kobito.qIU2Vs.png](https://qiita-image-store.s3.amazonaws.com/0/77729/d1166d2f-50da-489b-1794-1aee42fde23a.png "Kobito.qIU2Vs.png")
 
 ---
 
-  * https://github.com/imura81gt/aws-tools/blob/master/rds/restore-db-instance-from-db-snapshot.sh
+  ## でも
 
 ---
 
-## RDSを削除する
-## bashスクリプト
-
-図の(5)
+### さらにもっとやらかした場合は？
 
 ---
 
-  * https://github.com/imura81gt/aws-tools/blob/master/rds/delete-db-instance.sh
----
-
-## 気をつけたこと
-
----
-
-* RDSにEnvタグを付ける
-  * スナップショットから作るRDSは「Env:backup」
-  * IAM Policy
-    * Env:backup のRDSしか削除できないPolicy
-
---
-
-参照権限
-<pre>
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Action": [
-                "rds:Describe*",
-                "rds:ListTagsForResource",
-                "ec2:DescribeAvailabilityZones",
-                "ec2:DescribeVpcs",
-                "ec2:DescribeAccountAttributes",
-                "ec2:DescribeSecurityGroups"
-            ],
-            "Effect": "Allow",
-            "Resource": "*"
-        },
-</pre>
-
---
-スナップショット権限
-<pre>
-        {
-            "Action": [
-                "rds:RestoreDBInstanceFromDBSnapshot",
-                "rds:CreateDBInstance"
-            ],
-            "Effect": "Allow",
-            "Resource": "*"
-        },
-</pre>
-
---
-更新、削除権限
-- Env:backupのRDSだけ
-
-<pre>
-        {
-            "Effect": "Allow",
-            "Action": [
-                "rds:DeleteDBInstance",
-                "rds:ModifyDBInstance",
-                "rds:ModifyDBParameterGroup",
-                "rds:ModifyDBSubnetGroup",
-                "rds:CopyDBSnapshot",
-                "rds:DownloadDBLogFilePortion",
-                "rds:PromoteReadReplica",
-                "rds:RebootDBInstance",
-                "rds:RestoreDBInstanceFromDBSnapshot",
-                "rds:RestoreDBInstanceToPointInTime"
-            ],
-            "Resource": "*",
-            "Condition": {
-                "streq": {
-                    "rds:db-tag/Env": [
-                        "backup"
-                    ]
-                }
-            }
-        }
-    ]
-}
-</pre>
+ターミナルでがんばる！
+[ Gitでやらかした時に使える19個の奥義 ]
+http://qiita.com/muran001/items/dea2bbbaea1260098051
 
 ---
 
-## 良かったところ／悪かったところ
+## できるだけ、やらかさないようにしたいですね
 
----
-
-* 良かったところ
-  * 本番環境RDSとは切り離された環境になるので…
-    * Master - Slave関係がないので、無理にMasterとインスタンスサイズを合わせる必要が無い
-      * Master : db.m3.large ／ backupRDS : db.t1.micro でもいい
-    * read replicaと違って、作成時に本番環境に負荷をかけないで済む
-
---- 
-
-* 悪かったところ
-  * 小額だがお金はやっぱりかかる
-  * スナップショットから作成するRDSのbackup windowをoffにしたいけど、status:available のあとに modifyしないとoffにできない
-    * status:creatingの後、status:backing-upがすぐ実行されてしまう
-  * IAMのテストをしっかりしないと、意図しないRDSを削除しかねない
-  * バックアップ元RDSでinnodb_file_per_tableを有効にしちゃうと、スナップショットからの作成が遅い
-  
 ---
 
 ## おわり
