@@ -6,7 +6,13 @@
 
 ---
 
-![Kobito.36wG14.png](https://qiita-image-store.s3.amazonaws.com/0/77729/f4c13dc0-54cc-52e8-7e35-c93a39fff3ab.png "Kobito.36wG14.png")
+![naoko__Git_.png](https://qiita-image-store.s3.amazonaws.com/0/77729/0252ac24-713b-02ba-34a9-bbf97648230a.png "naoko__Git_.png")
+
+--
+
+* ファイルを間違って更新してしまった
+* Commitメッセージが間違っている
+* 同じようなCommitがたくさん並んでいる
 
 --
 
@@ -28,8 +34,8 @@
 ---
 
 ### プッシュした後
-* Commitをなかったことにしたい：**revert**
-<br />
+* Commitをなかったことにしたい：**revert**	
+<br /><br />
 **Push後にはamend/reset/rebaseしちゃダメ！**
 
 ---
@@ -39,7 +45,7 @@
 ---
 
 直前のコミットは、コミットした後に再度コミットボタンを押し、下記のように「最新のコミットを修正」を選択する。	
-![Kobito.f0IUw5.png](https://qiita-image-store.s3.amazonaws.com/0/77729/079f5f87-3417-92bd-b338-dba0367c04b3.png "Kobito.f0IUw5.png")
+![スクリーンショット_2017-02-28_21_14_43_1.png](https://qiita-image-store.s3.amazonaws.com/0/77729/db95e6f6-4fdc-f12d-a667-e6d5e6736aa5.png "スクリーンショット_2017-02-28_21_14_43_1.png")
 
 --
 
@@ -85,9 +91,8 @@ $ git rebase --abort
 ---
 
 「コミット適用前に戻す」を選択します。
-OKを押すと、「Revert コミット名」という名前の新しいコミットができます。	
-**revertは履歴にのこる**	
-![Kobito.2FZVWP.png](https://qiita-image-store.s3.amazonaws.com/0/77729/9696b1e6-3b24-e461-cc15-75afc6df3221.png "Kobito.2FZVWP.png")
+OKを押すと、「Revert コミット名」という名前の新しいコミットができます。		
+![スクリーンショット_2017-02-28_22_15_35.png](https://qiita-image-store.s3.amazonaws.com/0/77729/95843e8e-dffa-8bd8-79b1-b283956636b8.png "スクリーンショット_2017-02-28_22_15_35.png")
 
 ---
 
@@ -95,12 +100,13 @@ OKを押すと、「Revert コミット名」という名前の新しいコミ�
 
 --- 
 
-戻したいコミットの上で「このコミットまでブランチ名を元に戻す」を選択。modeはSoftを選択してOK
+戻したいコミットの上で「このコミットまでブランチ名を元に戻す」を選択。	
+modeはSoftを選択してOK	
 ![スクリーンショット 2017-02-28 21.58.09.png](https://qiita-image-store.s3.amazonaws.com/0/77729/3ce64726-7ca7-fcef-b587-7c95d0da907d.png "スクリーンショット 2017-02-28 21.58.09.png")
 
 ---
 
-## きんしじこう
+## やっちゃダメなこと
 
 ---
 
@@ -120,8 +126,8 @@ OKを押すと、「Revert コミット名」という名前の新しいコミ�
 
 ---
 
-ターミナルでがんばる！
-[ Gitでやらかした時に使える19個の奥義 ]
+ターミナルでがんばる！	
+[ Gitでやらかした時に使える19個の奥義 ]   
 http://qiita.com/muran001/items/dea2bbbaea1260098051
 
 ---
