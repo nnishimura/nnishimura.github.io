@@ -1,0 +1,74 @@
+@charset "UTF-8";
+body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+th,
+td,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+input,
+textarea,
+option,
+div,
+p,
+dt,
+dd,
+li,
+address {
+  font-family: 'ヒラギノ角ゴシック', 'Hiragino Sans', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  color: #222222;
+  letter-spacing: 0.1em;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(246, 246, 246, 0) !important;
+}
+
+::selection {
+  color: #222222;
+  background: #e6e6e6;
+}
+
+::-moz-selection {
+  color: #222222;
+  background: #e6e6e6;
+}
+
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  opacity: 0;
+  transition: opacity 1200ms cubic-bezier(0.25, 0.1, 0.25, 1) 0ms;
+  -webkit-transition: opacity 1200ms cubic-bezier(0.25, 0.1, 0.25, 1) 0ms;
+  -moz-transition: opacity 1200ms cubic-bezier(0.25, 0.1, 0.25, 1) 0ms;
+  -o-transition: opacity 1200ms cubic-bezier(0.25, 0.1, 0.25, 1) 0ms;
+  -ms-transition: opacity 1200ms cubic-bezier(0.25, 0.1, 0.25, 1) 0ms;
+}
+body.load {
+  opacity: 1;
+}
+
+img {
+  display: block;
+}

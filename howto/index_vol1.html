@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ja">
+<head>
+<meta http-equiv="content-script-type" content="text/javascript">
+<meta charset="utf-8">
+<title>資料</title>
+<link href="https://fonts.googleapis.com/css?family=Archivo+Black|Source+Code+Pro" rel="stylesheet">
+<link rel="stylesheet" href="css/reset.css" media="screen,print">
+<link rel="stylesheet" href="css/style.css" media="screen,print">
+</head>
+<body>
+<div id="wrapAll">
+  <div id="main">
+  <div id="slide">
+    <div class="slide_wrap">
+    <ul id="article">
+      <li class="page">
+        <div class="page_wrap pt0">
+        <div class="dit">
+          <div class="dtc vam"><h1><span>MOCK LESSON</span></h1></div>
+        </div>
+        </div>
+      </li>
+      <li class="page">
+        <div class="page_wrap">
+          <h2><span>Pages</span></h2>
+          <div class="box bt">
+          <ul class="mokuji">
+            <li><a href="javascript:void(0);"><span>01.</span>はじめに</a></li>
+            <li><a href="javascript:void(0);"><span>02.</span>準備</a></li>
+            <li><a href="javascript:void(0);"><span>03.</span>作成手順</a></li>
+            <li><a href="javascript:void(0);"><span>04.</span>スライス</a></li>
+            <li><a href="javascript:void(0);"><span>05.</span>HTML 1 - ヘッダー</a></li>
+            <li><a href="javascript:void(0);"><span>06.</span>HTML 2 - コンテンツ</a></li>
+            <li><a href="javascript:void(0);"><span>07.</span>HTML 3 - フッター</a></li>
+            <li><a href="javascript:void(0);"><span>08.</span>HTML 4 - メインビジュアル</a></li>
+            <li><a href="javascript:void(0);"><span>09.</span>スライドの高さとインターバル</a></li>
+            <li><a href="javascript:void(0);"><span>10.</span>スライドのアニメーション</a></li>
+            <li><a href="javascript:void(0);"><span>11.</span>タイトルアニメーション</a></li>
+            <li><a href="javascript:void(0);"><span>12.</span>おわりに</a></li>
+<!--             <li><a href="javascript:void(0);"><span>13.</span>ページ</a></li>
+            <li><a href="javascript:void(0);"><span>14.</span>ページ</a></li>
+            <li><a href="javascript:void(0);"><span>15.</span>ページ</a></li> -->
+          </ul>
+          </div>
+        </div>
+      </li>
+      <li class="page">
+        <div class="page_wrap">
+          <h2>はじめに</h2>
+          <div class="box bdb bt">
+            <h3>モックとは</h3>
+            <p class="txt"><span class="red">モックアップ【mock-up】とは外見を実物そっくりに似せた模型のこと。</span>
+            携帯電話は、外装と重さだけが再現され、画面はシールが貼ってある事が多い。
+            一方電子機器のモックアップは外装が省略され画面の動きだけが再現される。
+            また、サイト設計の際、簡易的なHTMLや専用ソフト等でデザイン＆インターフェースやリンク等も再現してあるものをモックアップと呼ぶことがある。
+            この場合はエクセルなどで作られるともあり、本物そっくりとまではいえないものもある。
+            ワイヤーフレームのことをモックアップと呼ぶ場合もある。
+            モックアップは用途によって様々な形態がある。</p>
+          </div>
+          <div class="box bdb">
+            <h3>モックのメリット</h3>
+            <p class="txt">
+            ・明確なビジョンを共有 → カンプでは伝わりにくい点を伝える<br>
+            ・動きを確認できる<br>
+            ・ビジュアルに華やかさを加える<br>
+            </p>
+          </div>
+          <div class="box bdb">
+            <h3>個人的には。。。。</h3>
+            <p class="txt">動きを伝えるという本来の目的はもちろん、<br>
+            ・カンプを150%の状態で再現して投げたい<br>
+            ・メインビジュアルで一山つくることで、少しマウンティングをとる<br>（この会社はすごいんじゃないか。。。的な）<br>
+            などと考えながら作っていますが、それ以上に一番大きいメリットは<br>
+            <br>
+            <span class="red">視線を散らすというところにあると思います。</span></p>
+            <p class="txt">たとえば。。。<br><br><br><br><br><br></p>
+            <div class="mock1">
+              <div class="an"><img src="img/an.png" alt="" width="447" height="300"></div>
+            </div>
+            <p class="txt">上のようなデザインを、この部分は実装時にアニメーションになりますと添えて投げるとします。<br>
+            <br><br>
+            にも関わらずクライアントからは<br><br>
+            ・メインビジュアルのアンパンの顔の色をもう少しおさえてください。<br>
+            ・顔のまわりに白い線が入ってます消してください<br>
+            ・もう少し動きのあるデザインでお願いします<br>
+            <br>
+            などという修正が山ほどくるのをよく見ます。<br>
+            <br><br><br>
+            そこで下のようなモックで投げてみるとします<br><br><br><br><br><br></p>
+            <div class="mock2">
+              <div class="an"><img src="img/an.png" alt="" width="447" height="300"></div>
+            </div>
+            <p class="txt">
+            くるとしたら少しアンパンのスピードが速いとかそんな感じでしょう。<br>
+            実装時に調整で、デザインOKです。<br>
+            <br>
+            そんなにうまいこといかないですが、スライドで切り替わることで、どうしても間に合わなかった写真の補正のダメ出しくらいは軽減できるんじゃないかなと思います。<br>
+            </p>
+
+            <!-- 逆を言ってしまうと、いい加減な状態で作ったモックを投げてしまうとデザイン段階で<br>
+            『これ以上にならない』という不安を抱かれてしまう可能性もあると思います。<br><br>モックの目的を<br>
+            <span class="red">＜伝える＞ から　＜感動させる＞</span>
+            に切り替えて作ることが大事。かなと思います。 -->
+          </div>
+          <div class="box">
+            <h3>現状のデザイン出し</h3>
+            <p class="txt">
+              上記をふまえて、現状のデザインチェックの方法は。。。。<br>
+              <br>
+              <a href="mock/index2.html" target="_blank" class="downlod"><span>TOP(クリックで切り替え切り替え)</span></a>
+              <br>
+              もしこうだったら。。。<br>
+              <br>
+              <a href="mock/index3.html" target="_blank" class="downlod"><span>TOP(クリックで切り替え切り替え)</span></a>
+              <br>
+              あわよくばこうだったら。。。<br>
+              <br>
+              <a href="mock/index.html" target="_blank" class="downlod"><span>TOP（スライドあり）</span></a>
+              <br>
+              ということで今回はこの＜TOP（スライドあり）＞のモックを作成できるように資料を用意しました。
+            </p>
+          </div>
+          
+          
+          
+        </div>
+      </li>
+      <li class="page">
+        <div class="page_wrap">
+          <h2>準備</h2>
+          <div class="box bdb bt">
+            <h3>テンプレートダウンロード</h3>
+            <p class="txt">下記から、ZIPファイルをダウンロードして解凍してください
+            <a href="mock.zip" class="downlod"><span>DownLoad</span></a></p>
+          </div>
+          <div class="box">
+            <h3>ファイル構成</h3>
+            <p class="txt">
+              <b>
+                <span class="blue">index.html</span><br>
+              ├　css<br>
+              │　├ <span class="blue">designer.css</span><br>
+              │　└ reset.css<br>
+              ├　js<br>
+              │　├ jquery.min.js<br>
+              │　├ jquery.easing.1.3.js<br>
+              │　├ common.js<br>
+              │　└ <span class="blue">slide.js</span><br>
+              └　img<br>
+              </b><br><br>
+            ファイル構成は上記になります。皆さんには<span class="blue">青文字ファイル3点</span>を触ってもらい、モックを作成していただきます。<br>
+            <!-- <a href="mock/index.html" target="_blank" class="downlod"><span>DEMO</span></a> -->
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="page">
+        <div class="page_wrap">
+          <h2>作成手順</h2>
+          <div class="box bt">
+            <p class="txt">
+              今回は以下の要素を基本として実装します。<br>実装時とは違い、モックの場合の手順となります。<br><br>
+              <b>
+              ・スライス<br>
+              ・HTML組み<br>
+              ・追従ヘッダー<br>
+              ・スライドショー<br>
+              ・タイトルのアニメーション</b>
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="page">
+        <div class="page_wrap">
+          <h2>スライス</h2>
+          <div class="box bt">
+            <h3>スライスする要素</h3>
+            <p class="txt">スライスは<span class="red">動かす箇所、距離感を再現する箇所、つながりを再現する箇所</span>でできるだけ効率的にとります。このときセクションにテクスチャを使用している場合などは高さぴったりで<span class="blue">背景（青線）</span>のスライスも忘れないようにしましょう。</p>
+            <div class="screen">
+              <img src="img/screen.png" alt="" width="100%">
+            </div>
+          </div>
+        </div>
+      </li>
+      
+      <li class="page">
+        <div class="page_wrap">
+          <h2>HTML 1 - ヘッダー</h2>
+          <div class="box bt">
+            <h4>HTML</h4>
+<pre>
+&lt;header&gt;
+  &lt;div class=&quot;header_wrap&quot;&gt;
+    &lt;div id=&quot;logo&quot;&gt;&lt;img src=&quot;img/logo.png&quot; alt=&quot;logo&quot; title=&quot;&quot; width=&quot;96&quot; height=&quot;80&quot;&gt;&lt;/div&gt;
+    &lt;nav id=&quot;gnav&quot;&gt;&lt;img src=&quot;img/gnav.png&quot; alt=&quot;gnav&quot; title=&quot;&quot; width=&quot;502&quot; height=&quot;80&quot;&gt;&lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+</pre>
+<h4>CSS</h4>
+<pre>
+header {
+    <span class="yellow">position: fixed;</span>
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3000;
+}
+
+header div.header_wrap {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+header div.header_wrap div#logo {
+    float: left;
+    display: block;
+    margin-left: 60px;
+}
+
+header div.header_wrap #gnav {
+    position: absolute;
+    top: 0;
+    right: 60px;
+    display: block;
+}
+</pre>
+<p class="txt">
+ヘッダーの配置にはポジションを設定します。<br>
+追従　→　<span class="blue">position: fixed;</span><br>
+追従なしでメインビジュアルの上に乗せる　→　position: absolute;<br>
+通常のブロック要素　→　position: relative;<br>
+<br>
+要素の全面・背面の設定はz-indexを使用します。<br>
+数字が大きければ大きいほど前面にきます。<br>
+※親要素に依存する。<br>
+<br>
+このとき高さの指定をしなくていいように、ロゴやナビのスライスはヘッダーの高さぴったりがいいかも。
+
+<br><br>
+参考：<br>
+<a href="https://techacademy.jp/magazine/8539"  target="_blank" class="link">表示位置を変えたい！CSSでpositionの使い方</a><br>
+<a href="https://techacademy.jp/magazine/8645"  target="_blank" class="link">重ねて表示する！CSSのz-indexの使い方</a>
+</p>
+
+          </div>
+        </div>
+      </li>
+      <li class="page">
+        <div class="page_wrap">
+          <h2>HTML 2 - コンテンツ</h2>
+          <div class="box bt">
+            <h4>HTML</h4>
+<pre>
+&lt;section class=&quot;content_01&quot;&gt;
+  &lt;img src=&quot;img/content_01.png&quot; alt=&quot;content_01&quot; title=&quot;&quot; width=&quot;984&quot; height=&quot;112&quot;&gt;
+&lt;/section&gt;
+&lt;section class=&quot;content_02&quot;&gt;
+  &lt;img src=&quot;img/content_02.png&quot; alt=&quot;content_02&quot; title=&quot;&quot; width=&quot;984&quot; height=&quot;2013&quot;&gt;
+&lt;/section&gt;
+</pre>
+<h4>CSS</h4>
+<pre>
+section {
+    width: 100%;
+}
+
+section.content_01 {
+    <span class="yellow">background-color: #f5f5f5;</span>
+}
+
+section img {
+    margin-left: auto;
+    margin-right: auto;
+}
+</pre>
+  <p class="txt">各セクションごとに素材を中央配置して、<span class="blue">background-color</span>で背景色を敷きます。</p>
+          </div>
+        </div>
+      </li>
+      <li class="page">
+        <div class="page_wrap">
+          <h2>HTML 3 - フッター</h2>
+          <div class="box bt">
+            <h4>HTML</h4>
+<pre>
+&lt;footer&gt;
+  &lt;div class=&quot;footer_wrap&quot;&gt;
+    &lt;img src=&quot;img/footer.png&quot; alt=&quot;footer&quot; title=&quot;&quot; width=&quot;985&quot; height=&quot;285&quot;&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;
+</pre>
+<h4>CSS</h4>
+<pre>
+footer {
+    width: 100%;
+}
+
+footer .footer_wrap {
+    width: 100%;
+    <span class="yellow">background-image: url(../img/bg-footer.png);
+    background-position: 0 0;
+    background-repeat: repeat-x;</span>
+}
+
+footer .footer_wrap img {
+    margin-left: auto;
+    margin-right: auto;
+}
+</pre>
+<p class="txt">コンテンツ部分同様、スライスした画像を中央配置しますが、DEMOのようにバイカラーや、テクスチャ背景の場合は、背景用にスライスした画像を<span class="blue">background-repeat</span>を使用して背景にします。</p>
+          </div>
+        </div>
+      </li>
+      <li class="page">
+        <div class="page_wrap">
+          <h2>HTML 4 - メインビジュアル</h2>
+          <div class="box bt">
+            <h4>HTML</h4>
+<pre>
+&lt;div id=&quot;mv&quot;&gt;
+  &lt;h1&gt;&lt;img src=&quot;img/title.png&quot; alt=&quot;title&quot; title=&quot;&quot; width=&quot;208&quot; height=&quot;136&quot;&gt;&lt;/h1&gt;
+  &lt;div id=&quot;slide&quot;&gt;
+    &lt;div class=&quot;slide_wrap&quot;&gt;
+      <span class="yellow">&lt;ul&gt;
+        &lt;li style=&quot;background-image: url(img/pic_01.jpg);&quot;&gt;&lt;/li&gt;
+        &lt;li style=&quot;background-image: url(img/pic_02.jpg);&quot;&gt;&lt;/li&gt;
+        &lt;li style=&quot;background-image: url(img/pic_03.jpg);&quot;&gt;&lt;/li&gt;
+        &lt;li style=&quot;background-image: url(img/pic_04.jpg);&quot;&gt;&lt;/li&gt;
+        &lt;li style=&quot;background-image: url(img/pic_05.jpg);&quot;&gt;&lt;/li&gt;
+      &lt;/ul&gt;</span>
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<h4>CSS</h4>
+<pre>
+#mv {
+    position: relative;
+    width: 100%;
+}
+
+div#slide {
+    position: relative;
+}
+
+div#slide div.slide_wrap {
+    width: 100%;
+    height: 100%;
+}
+
+div#slide div.slide_wrap ul {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+div#slide div.slide_wrap ul li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1000;
+    <span>transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -webkit-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -moz-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -o-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -ms-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;</span>
+}
+
+div#slide div.slide_wrap ul li.on {
+    opacity: 1;
+}
+</pre>
+<p class="txt">スライド部分のHTMLです、実際にスライドする画像を背景画像として中央配置して、スライドします。</p>
+          </div>
+        </div>
+      </li>
+      <li class="page">
+        <div class="page_wrap">
+          <h2>スライドの高さとインターバル</h2>
+          <div class="box bt">
+            <h4>JS</h4>
+<pre>
+var Slide = $(&quot;#slide&quot;);
+var SlidePic = $(&quot;.slide_wrap li&quot;);
+var SlideLen = SlidePic.length;
+var StarNum = 0;
+var SlideIndex = 0;
+var SlideTimer;
+
+<span>// ******* スライドの高さを指定する（幅はcssで指定）</span>
+<span class="yellow">var SlideH = &quot;full&quot;;</span>
+<span>// &quot;full&quot; or &quot;ratio&quot;  or &quot;num&quot;
+// var SlideH = &quot;full&quot;; 画面サイズ
+// var SlideH = &quot;0.5&quot;; window高さの50%(0.5)
+// var SlideH = &quot;500&quot;; 500px</span>
+
+<span>///AUTOSLIDE</span>
+var AUTOSLIDE = true;<span> //true or false</span>
+<span class="yellow">var SlideInterval = 8000; </span><span>//自動スライドの間隔</span>
+<span>// *******スライドの速さはcssで</span>
+
+<span>///SLIDECTRL</span>
+var CTRL = false;<span> //true or false</span>
+var CtrlBtn;
+<span>///SLIDEARR</span>
+var SLIDEARR = false;<span> //true or false</span>
+var slideArr, slideArrNext, slideArrPrev
+
+jQuery.event.add(window, &quot;load&quot;, function() {
+    if (CTRL == true) {
+        CtrlInit();
+    }
+    if (SLIDEARR == true) {
+        ArrInit();
+    }
+    SlideInit();
+    SlideIndex = StarNum;
+
+    if(SlideLen &gt; 1){
+        SlideSet();
+    }
+});
+
+WIN.resize(function() {
+    SlideInit();
+});
+
+function SlideInit() {
+    if (SlideH == &quot;full&quot;) {
+        Slide.height(WinH);
+    } else {
+        if(SlideH &lt;= 1){
+            Slide.height(WinH*SlideH);
+        } else {
+            Slide.height(SlideH);
+        }
+        
+    }
+}
+
+function CtrlInit() {
+    var CtrlHTML = &quot;&lt;ul class=&#039;ctrl&#039;&gt;&quot;
+    for (var i = 0; i &lt; SlideLen; i++) {
+        CtrlHTML += &quot;&lt;li&gt;&lt;a href=&#039;javascript:void(0)&#039;&gt;&lt;/a&gt;&lt;/li&gt;&quot;;
+    }
+    CtrlHTML += &quot;&lt;/ul&gt;&quot;
+    Slide.append(CtrlHTML)
+    CtrlBtn = $(&#039;ul.ctrl li a&#039;)
+    CtrlBtn.click(function() {
+        clearTimeout(SlideTimer)
+        var ctrlIndex = CtrlBtn.index(this)
+        SlideIndex = ctrlIndex;
+        SlideSet()
+    })
+}
+
+function ArrInit() {
+    Slide.append(&quot;&lt;a href=&#039;javascript:void(0)&#039; class=&#039;slide_arr slide_prev&#039;&gt;&lt;/a&gt;&lt;a href=&#039;javascript:void(0)&#039; class=&#039;slide_arr slide_next&#039;&gt;&lt;/a&gt;&quot;)
+    slideArr = $(&#039;.slide_arr&#039;);
+    slideArrPrev = $(&#039;.slide_prev&#039;);
+    slideArrNext = $(&#039;.slide_next&#039;);
+
+    slideArrNext.click(function() {
+        SlideNext();
+    });
+    slideArrPrev.click(function() {
+        SlidePrev();
+    });
+}
+
+function SlideSet() {
+    SlidePic.removeClass(&#039;on&#039;);
+    SlidePic.eq(SlideIndex).addClass(&#039;on&#039;);
+    if (CTRL == true) {
+        CtrlBtn.removeClass(&#039;on&#039;);
+        CtrlBtn.eq(SlideIndex).addClass(&#039;on&#039;);
+    }
+    if (AUTOSLIDE == true) {
+        SlideTimer = setTimeout(function() {
+            if (SlideIndex &lt; SlideLen - 1) {
+                SlideIndex++;
+            } else {
+                SlideIndex = 0;
+            }
+            SlideSet()
+        }, SlideInterval);
+    }
+}
+
+function SlideNext() {
+    clearTimeout(SlideTimer)
+    if (SlideIndex &lt; SlideLen - 1) {
+        SlideIndex++;
+    } else {
+        SlideIndex = 0;
+    }
+    SlideSet()
+}
+
+function SlidePrev() {
+    clearTimeout(SlideTimer)
+    if (SlideIndex &gt; 0) {
+        SlideIndex--;
+    } else {
+        SlideIndex = SlideLen - 1;
+    }
+    SlideSet()
+}
+
+</pre>
+<p class="txt">スライドに使用するjsです。黄色部分を編集して<span class="blue">スライドの高さ</span>、<span class="blue">スライドの切り替わりのインターバル</span>を設定します。</p>
+          </div>
+        </div>
+      </li>
+      <li class="page">
+        <div class="page_wrap">
+          <h2>スライドのアニメーション</h2>
+          <div class="box bt">
+<h4>CSS</h4>
+<pre>
+div#slide div.slide_wrap ul li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1000;
+    <span class="yellow">transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -webkit-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -moz-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -o-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -ms-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;</span>
+}
+
+div#slide div.slide_wrap ul li.on {
+    opacity: 1;
+}
+</pre>
+<p class="txt">transitionを設定して、<span class="blue">スライドのスピード</span>、<span class="blue">スライド時のイージング</span>を設定します。<br>
+<br><br>DEMOでは<span class="blue">cubic-bezier(0.250, 0.100, 0.250, 1.000)のイージングで0秒の遅延（遅延なし）でopacityを2秒使って切り替える</span>
+という設定になります。
+<br><br>
+参考：<br>
+<a href="http://www.htmq.com/css3/transition.shtml"  target="_blank" class="link">transition</a><br>
+<a href="https://matthewlein.com/ceaser/"  target="_blank" class="link">イージング</a></p>
+<h4>CSS</h4>
+<pre>
+div#slide div.slide_wrap ul li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1000;
+    <span class="yellow">transition: all 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -webkit-transition: all 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -moz-transition: all 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -o-transition: all 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -ms-transition: all 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    transform-origin: center;
+    -webkit-transform-origin: center;
+    -moz-transform-origin: center;
+    -o-transform-origin: center;
+    -ms-transform-origin: center;
+    transform: scale(1.02, 1.02);
+    -webkit-transform: scale(1.02, 1.02);
+    -moz-transform: scale(1.02, 1.02);
+    -o-transform: scale(1.02, 1.02);
+    -ms-transform: scale(1.02, 1.02);</span>
+}
+
+div#slide div.slide_wrap ul li.on {
+    opacity: 1;
+    <span class="yellow">transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);</span>
+}
+</pre>
+<p class="txt">transformを使用すると2D変形3D変形を適用させることができます。
+<br><br>
+参考：<br>
+<a href="http://www.htmq.com/css3/transform.shtml"  target="_blank" class="link">transform</a><br>
+</p>
+
+          </div>
+        </div>
+      </li>
+      <li class="page">
+        <div class="page_wrap">
+          <h2>タイトルアニメーション</h2>
+          <div class="box bt">
+<h4>HTML</h4>
+<pre>
+&lt;div id=&quot;mv&quot;&gt;
+      &lt;h1&gt;&lt;img src=&quot;img/title.png&quot; alt=&quot;title&quot; title=&quot;&quot; width=&quot;208&quot; height=&quot;136&quot;&gt;&lt;/h1&gt;
+      <span>・・・スライド省略</span>
+&lt;/div&gt;
+</pre>
+<h4>JS</h4>
+<pre>
+var BODY = $('body')
+jQuery.event.add(window,"load",function(){
+    CommonInit()
+    <span class="yellow">BODY.addClass('load')</span>
+});
+</pre>
+<h4>CSS</h4>
+<pre>
+#mv {
+    position: relative;
+    width: 100%;
+}
+
+h1 {
+    display: block;
+    position: absolute;
+    z-index: 3000;
+    top: 50%;
+    left: 50%;
+    margin-top: -68px;
+    margin-left: -104px;
+}
+
+h1 {
+    <span>/* transition: all "アニメーションの秒数"ms cubic-bezier("イージング") "遅延秒数"ms */</span>
+    <span class="yellow">transition: all 1000ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 1000ms;
+    -webkit-transition: all 1000ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 1000ms;
+    -moz-transition: all 1000ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 1000ms;
+    -o-transition: all 1000ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 1000ms;
+    -ms-transition: all 1000ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 1000ms;
+    opacity: 0;
+    transform: translate3d(0px, 20px, 0px);
+    -webkit-transform: translate3d(0px, 20px, 0px);
+    -moz-transform: translate3d(0px, 20px, 0px);
+    -ms-transform: translate3d(0px, 20px, 0px);
+    -o-transform: translate3d(0px, 20px, 0px);</span>
+}
+
+body.load h1 {
+    <span class="yellow">opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -ms-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate3d(0px, 0px, 0px);</span>
+}
+</pre>
+<p class="txt">DEMOファイルにはあらかじめ、ページロード時にbodyにloadというclassがつく設定になっています。<br>
+loadをトリガーとして、ロード時のアニメーションを発動させます。<br>
+</p>
+          </div>
+        </div>
+      </li>
+      <li class="page">
+        <div class="page_wrap">
+          <h2>おわり</h2>
+          <div class="box bt">
+            <p class="txt">今回はほぼスライド部分の見え方のモックでしたが、transformを適用させることで、いろいろな見せ方ができるのお時間あるときに試してみてください。基本のcssを駆使してざっくりとしたスライスで再現させ、動かしたいパーツを上に乗せて動かす。それだけでも少し見え方が変わるかと思います。<br><br>本当にいいモックを作れたらそれは理想ですが、目的はデザインしたものを強化して投げるというところだと思うので、自分たちのできる技術でまかなおうという気持ちがマイナスにはたらくこともあるかと思います。最高の形をイメージして、コーダーに相談していただければ一緒にモックを作ることも可能ですので是非ご相談ください◎</p>
+          </div>
+        </div>
+      </li>
+      
+    </ul>
+    </div>
+  </div>
+  </div>
+</div>
+<script src="js/jquery-1.10.2.min.js"></script> 
+<script src="js/common.js"></script> 
+<script src="js/slide.js"></script> 
+</body>
+</html>

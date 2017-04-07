@@ -1,0 +1,422 @@
+@charset "UTF-8";
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+
+body,th,td,h1,h2,h3,h4,h5,h6,pre,input,textarea,option,div,p,dt,dd,li,address {
+    font-family: 'ヒラギノ角ゴシック', 'Hiragino Sans', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    color: #000;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(246, 246, 246, 0) !important;
+}
+
+::selection {
+    color: #000;
+    background: #ccc;
+}
+
+::-moz-selection {
+    color: #000;
+    background: #ccc;
+}
+
+img {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 1200ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -webkit-transition: opacity 1200ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -moz-transition: opacity 1200ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -o-transition: opacity 1200ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -ms-transition: opacity 1200ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+}
+
+body.load {
+    opacity: 1;
+}
+
+img {
+    display: block;
+}
+
+.bg_brown{
+    background-color: #644c2c;
+}
+
+
+/* HEADER */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3000;
+}
+
+header div.header_wrap {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+header div.header_wrap div#logo {
+    float: left;
+    display: block;
+    margin-left: 60px;
+}
+
+header div.header_wrap #gnav {
+    position: absolute;
+    top: 0;
+    right: 60px;
+    display: block;
+}
+
+
+/* CONTENT */
+
+#wrapAll {
+    width: 100%;
+}
+
+#main {
+    width: 100%;
+}
+
+#mv {
+    position: relative;
+    width: 100%;
+}
+
+h1 {
+    display: block;
+    position: absolute;
+    z-index: 3000;
+    top: 50%;
+    left: 50%;
+    margin-top: -68px;
+    margin-left: -104px;
+}
+
+section {
+    width: 100%;
+}
+
+section.content_01 {
+    background-color: #f5f5f5;
+}
+
+section img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* SLIDE */
+
+div#slide {
+    position: relative;
+}
+
+div#slide div.h100 {
+    width: 100%;
+    height: 100%;
+}
+
+div#slide div.h100 ul {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+div#slide div.h100 ul li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 98% auto;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -webkit-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -moz-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -o-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+    -ms-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 0ms;
+}
+
+
+div#slide div.h100 ul li.on {
+    opacity: 1;
+    /* transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1); */
+}
+
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+}
+
+footer .footer_wrap {
+    width: 100%;
+    background-image: url(../img/bg-footer.png);
+    background-position: 0 0;
+    background-repeat: repeat-x;
+}
+
+footer .footer_wrap img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.pic{
+    display: inline-block;
+    width: 313px;
+    height: 208px;
+    margin-top: 100px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.pic.type2{
+    margin-left:1em;
+    margin-right: 1em;
+}
+
+.pic img{
+    width: 100%;
+    height: 100%;
+}
+
+.pic .pic_ttl{
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.pic .pic_inner{
+    background:#333;
+    display: block;
+    position: relative;
+}
+
+.pic .pic_date{
+    color: #8c8c8c;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    display: block;
+    line-height: 1;
+    padding-bottom: 14px;
+}
+
+.line,.caption{
+    position:absolute;
+}
+
+.line{
+    background:#fff;
+}
+
+.caption{
+    color:#fff;
+    font-weight: bold;
+}
+
+.line-top{
+    width: 90%;
+    height: 1px;
+    left:5%;
+    top:5%;
+}
+
+.line-left{
+    height: 90%;
+    width: 1px;
+    left:5%;
+    top:5%;
+}
+
+.line-right{
+    width: 1px;
+    height: 90%;
+    right:5%;
+    bottom:5%;
+}
+
+.line-bottom{
+    width: 90%;
+    height: 1px;
+    right:5%;
+    bottom:5%;
+}
+
+.center{
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    height:1em;
+}
+
+
+/* =============================================
+@animation
+============================================= */
+ 
+ /* =============================================
+@共通
+============================================= */
+.pic .caption{
+    opacity: 0;
+}
+
+.pic img,
+.pic a:hover .caption{
+    opacity:1;
+}
+
+.pic .caption,
+.pic.type2 .line,
+.pic.type2 img{
+    -moz-transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -webkit-transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -ms-transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+}
+
+
+/* =============================================
+@type1 左
+============================================= */
+/*下地を黒くしておく*/
+.pic.type1 .pic_inner{
+    background:#333;
+}
+
+.pic.type1 .pic_inner img{
+    opacity:1;
+    -moz-transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -ms-transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -webkit-transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+}
+/*下地の上のimageを透過させることで、暗くなる*/
+.pic.type1 a:hover img{
+    opacity:0.6;
+}
+
+/* =============================================
+@type2 中央
+============================================= */
+.pic.type2 .pic_inner{
+    background:#333;
+}
+
+.pic.type2 .pic_inner img{
+    opacity:1;
+    -moz-transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -ms-transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -webkit-transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+}
+
+.pic.type2 a:hover img{
+    opacity:0.6;
+}
+
+/*ホバー前は見えないようにする*/
+.pic.type2 .line-top,
+.pic.type2 .line-bottom{
+    width: 0;
+}
+
+.pic.type2 .line-left,
+.pic.type2 .line-right{
+    height: 0;
+}
+
+.pic.type2 a:hover img{
+    opacity:0.6;
+}
+
+/*ホバー時に長くする*/
+.pic.type2 a:hover .line-top,
+.pic.type2 a:hover .line-bottom{
+    width: 90%;
+}
+
+.pic.type2 a:hover .line-left,
+.pic.type2 a:hover .line-right{
+    height: 90%;
+}
+
+/* =============================================
+@type3 右
+============================================= */
+.pic.type3 .pic_inner{
+    background:#333;
+}
+
+.pic.type3 .pic_inner img{
+    opacity:1;
+    -moz-transition:opacity 2000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -ms-transition:opacity 2000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -webkit-transition:opacity 2000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    transition:opacity 2000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+}
+
+.pic.type3 a:hover img{
+    opacity:0.6;
+}
+
+/*下からフェードインのため、transformを設定する*/
+.pic.type3 .caption{
+    opacity:0;
+    -moz-transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -ms-transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -webkit-transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -webkit-transform:translate3d(0,10px,0);
+    -moz-transform:translate3d(0,10px,0);
+    -ms-transform:translate3d(0,10px,0);
+    transform:translate3d(0,10px,0);
+}
+
+.pic.type3 a:hover .caption{
+    opacity:1;
+    -webkit-transform:translate3d(0,0,0);
+    -moz-transform:translate3d(0,0,0);
+    -ms-transform:translate3d(0,0,0);
+    transform:translate3d(0,0,0);
+}
+

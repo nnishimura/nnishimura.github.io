@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ja">
+<head>
+<meta http-equiv="content-script-type" content="text/javascript">
+<meta charset="utf-8">
+<title>資料</title>
+<link href="https://fonts.googleapis.com/css?family=Archivo+Black|Source+Code+Pro" rel="stylesheet">
+<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css">
+<link rel="stylesheet" href="css/reset.css" media="screen,print">
+<link rel="stylesheet" href="css/style_vol2.css" media="screen,print">
+</head>
+<body>
+<div id="wrapAll">
+  <div id="main">
+  <div id="slide">
+    <div class="slide_wrap">
+    <ul id="article">
+      <li class="page">
+        <div class="page_wrap pt0">
+        <div class="dit">
+          <div class="dtc vam"><h1><span>MOCK LESSON<br>VOL.2</span></h1></div>
+        </div>
+        </div>
+      </li>
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">今日の目標</h2>
+          <div class="box tac bdb">
+            <h3>ホバーした時（スクロールした時）の<br>
+            <span class="red">「ちょっとイイ」</span>エフェクト
+            </h3>
+            <p class="w_50 txt">
+              <a class="txt-link" href="http://www.epoi-jp.com/jp/user_data/collection.php" target="_blank">ホバーしたらふわっとフェードイン</a>とか<br>
+              <a class="txt-link" href="http://antigravite.jp/" target="_blank">ラインが伸びるやつ</a>とか<br>
+              <a class="txt-link" href="http://odashi.com/" target="_blank">画像が浮いてくるやつ</a>とか<br>
+            </p>
+            </div>
+            <h3 class="tal mb0">・従来の静止画のモックでは表現できない部分</h3>
+            <h3 class="tal">・パーツだけではなく、メインのエフェクトとして活用できるかもしれない！</h3>
+          </div>
+        </div>
+      </li>
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">今日の目標その2</h2>
+          <div class="box tac bdb">
+            <h3>モックの<span class="red">目玉</span>になるような<br>メインのエフェクト</h3>
+            <p class="w_50 txt mb0">
+              <a class="txt-link" href="howto/mock/index.html" target="_blank">muta</a>とか<br>
+              <a class="txt-link" href="http://tokyoart.flabo.jp/" target="_blank">TokyoArt</a>とか<br>
+              <a class="txt-link" href="http://www.one-day.jp/" target="_blank">ONE DAY</a>とか<br>
+              <a class="txt-link" href="https://wizy.jp/special/wsidestory/hazzie/" target="_blank">Wizy</a>とか<br>
+              <a class="txt-link" href="http://journalstandard.flabo.jp/relume/special/2016aw/life_is/issue10/" target="_blank">Journal standard</a>とか<br>
+              <a class="txt-link" href="http://www.elegance-cosmetics.com/" target="_blank">Elegance</a>とか<br>
+              <a class="txt-link" href="http://odashi.com/" target="_blank">うねの</a>とか
+            </p>
+            </div>
+            <h3 class="tal mb0">・（ほぼ）HTML/CSSオンリーで組める◎</h3>
+            <h3 class="tal">・ほとんどのサイトのメインエフェクトは、そこまで難しい技術は使われていない</h3>
+          </div>
+        </div>
+      </li>
+
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac">難しそう？</h2>
+          <div class="box tac bdb">
+            <h3><span class="red">たった3つ</span>のテクニックを覚えれば<br>
+              作れます</h3>
+            <p class="w_50 txt">
+                <a class="txt-link" href="http://www.htmq.com/css3/transition.shtml" target="_blank">CSS transition</a><br>
+                <a class="txt-link" href="http://www.htmq.com/css3/transform.shtml" target="_blank">CSS transform</a><br>
+                <a class="txt-link" href="http://www.htmq.com/css3/animation.shtml" target="_blank">CSS animation</a>
+              </p>
+            </div>
+            <h3 class="mb0 tac">あなたはまだCSSの本当の力を知らない・・・</h3>
+          </div>
+        </div>
+      </li>
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">準備</h2>
+          <div class="box tac bdb mb0">
+            <h3>テンプレートダウンロード</h3>
+            <p class="txt">下記から、ZIPファイルをダウンロードして解凍してください
+            <a href="mock.zip" class="downlod"><span>DownLoad</span></a></p>
+            </div>
+            <div class="box">
+            <h3>ファイル構成（演習形式です）</h3>
+            <p class="txt">
+              <b>
+                <span class="blue">q1〜q4.html</span><br>
+              ├　css<br>
+              │　├ <span class="blue">q1〜q4.css</span><br>
+              │　└ reset.css<br>
+              ├　js<br>
+              │　├ jquery.min.js<br>
+              │　├ jquery.easing.1.3.js<br>
+              │　├ <span class="red">common.js [NEW!]</span><br>
+              │　└ slide.js<br>
+              ├　<span class="red">answers</span><br>
+              └　img<br>
+              </b><br><br>
+            ファイル構成は上記になります。皆さんには、<br>
+            ・<span class="blue">q1〜q4.html</span><br>
+            ・<span class="blue">q1〜q4.css</span><br>
+            を触ってもらい、さまざまなサンプルを作成していただきます。<br>
+            </p>
+          </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">transition</h2>
+          <div class="box tac bdb mb0">
+            <p class="w_50 txt">
+              （前回より）動きをなめらかにする</p>
+            <h4>CSS</h4>
+            <pre class="tal">
+            .anime{
+                /*transition: CSSのプロパティ アニメーションの期間秒数 イージングの種類 遅れ秒数;*/
+                transition: background-color 1s linear 0s;
+                transition: background-color 1s cubic-bezier(0.250, 0.250, 0.750, 0.750) 0s;
+                <span class="yellow"> /* カンマで区切ることで、複数指定ができる */</span>
+                <span class="yellow">transition:background-color 0.5s linear 0s, width 0.5s linear 0s;</span>
+                <span class="yellow"> /* allですべてのプロパティを指定 */</span>
+                <span class="yellow">transition: all 1s cubic-bezier(0.250, 0.250, 0.750, 0.750) 0s;</span>
+            }</pre>
+            </div>
+            <div class="box tac">
+              <a href="#" class="btn">No transition</a>
+              <a href="#" class="btn trans">transition</a><br>
+              <a href="#" class="btn trans delay">delay</a>
+              <a href="#" class="btn trans multi">color &amp; width</a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">transform</h2>
+          <div class="box tac bdb mb0">
+            <p class="w_50 txt">「変形=transform」する</p>
+            <h4>CSS</h4>
+            <pre class="tal">
+.translate3d{
+  <span class="yellow">/*  transform: translate3d(X,Y,Z); */</span>
+  <span class="yellow">/*  X方向に50px,Y方向に-20pxずれる */</span>
+  transform: translate3d(50px,-20px,0);
+}
+.scale{
+  <span class="yellow">/*  transform: scale(X,Y); */</span>
+  <span class="yellow">/*  X方向に1.2倍、Y方向に1.2倍拡大する */</span>
+  transform: scale(1.2,1.2);
+}
+.rotate{
+  <span class="yellow">/*  transform: rotate(角度); */</span>
+  <span class="yellow">/*  時計回りに360度回転する。 */</span>
+  transform: rotate(360deg);
+}
+.skew{
+  <span class="yellow">/*  transform: skew(X軸の傾斜角度,Y軸の傾斜角度); */</span>
+  <span class="yellow">/*  X軸にそって20度変形する */</span>
+  transform: skew(20deg,0deg);
+}</pre><br>
+            <p class="tal">イージングの種類は<a class="txt txt-link" href="https://matthewlein.com/ceaser/" target="_blank
+            ">こちら</a></p>
+            </div>
+            <div class="box tac">
+              <h4>translate3d</h4>
+              <p class="transall translate3d sq"></p>
+              <h4>scale</h4>
+              <a class="transall circle scale"></a>
+              <h4>rotate</h4>
+              <a href="#" class="transall sq rotate"></a>
+              <h4>skew</h4>
+              <a href="#" class="transall sq skew"></a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">animation</h2>
+          <div class="box tac bdb mb0">
+            <p class="w_50 txt">繰り返しのアニメーション。<br>
+            繰り返し再生したいアニメーションがあるときはこれを使う。<br>
+            自分で一から作るのではなく、サンプルを改造できるくらいの知識で良い。<br>
+            </p>
+            <h4>CSS</h4>
+            <pre class="tal">
+<span class="yellow">/* animation: アニメーション名 秒数 イージング 繰り返し回数; */</span>
+.anime{
+  animation: buttonFlash 1s linear infinite;
+  <span class="yellow">/*ほとんどの場合infinite。その他はtransitionで事足りる*/</span>
+}
+@keyframes buttonFlash {
+  <span class="yellow">/* 経過時間の割合 */</span>
+  0% {
+  <span class="yellow">/* 経過時間が0%のとき、opacity:0.2 */</span>
+    opacity: 0.2;
+  }
+  8% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}</pre><br>
+            <p class="tal"><a class="txt txt-link" href="http://tobiasahlin.com/spinkit/" target="_blank
+            ">ローダー例</a><br>
+            サンプル<br>
+            <b><a class="tac txt-blue txt-link" href="mock/answers/q5.html" target="_blank">/mock/answers/q5.html</a></b><br>
+            <b><a class="tac txt-blue txt-link" href="mock/answers/css/q5.css" target="_blank">/mock/answers/q5.css</a></b><br>
+            </p>
+            </div>
+            <div class="box tac">
+              <a href="https://wizy.jp/special/wsidestory/hazzie/" class="flash" target="_blank
+              "><img src="https://wizy.jp/special/wsidestory/hazzie//img/btn.svg" alt=""></a><br><br>
+               <a class="floating fthumb" href="http://art-marche.jp/2017" target="_blank
+              "><img src="http://art-marche.jp/2017/img/teaser/mv_01.jpg" alt=""></a><br>
+              <a href="http://sunart-corp.com/" target="_blank">
+              <div class="sk-fading-circle">
+              <div class="sk-circle1 sk-circle"></div>
+              <div class="sk-circle2 sk-circle"></div>
+              <div class="sk-circle3 sk-circle"></div>
+              <div class="sk-circle4 sk-circle"></div>
+              <div class="sk-circle5 sk-circle"></div>
+              <div class="sk-circle6 sk-circle"></div>
+              <div class="sk-circle7 sk-circle"></div>
+              <div class="sk-circle8 sk-circle"></div>
+              <div class="sk-circle9 sk-circle"></div>
+              <div class="sk-circle10 sk-circle"></div>
+              <div class="sk-circle11 sk-circle"></div>
+              <div class="sk-circle12 sk-circle"></div>
+            </div>
+            </a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">ベンダープリフィックス</h2>
+          <div class="box tac bdb mb0">
+            <p class="w_50 txt">忘れるとChromeでしかアニメーションしませんので、忘れずに！<br>
+            transform/transition/animationすべて必要です。
+            </p>
+            <h4>CSS（長い）</h4>
+            <pre class="tal">
+<span class="yellow">/* /-moz-/-webkit-/-ms/-o-/ */</span>
+<span class="yellow">/* transition/animation/transformなどの前につける */</span>
+.flash{
+  -webkit-animation: buttonFlash 1s linear infinite;
+  -ms-animation: buttonFlash 1s linear infinite;
+  -o-animation: buttonFlash 1s linear infinite;
+  -moz-animation: buttonFlash 1s linear infinite;
+  animation: buttonFlash 1s linear infinite;
+}
+
+@-webkit-keyframes buttonFlash {
+  0% {
+    opacity: 0.2;
+  }
+  8% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+@-moz-keyframes buttonFlash {
+  0% {
+    opacity: 0.2;
+  }
+  8% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+@-o-keyframes buttonFlash {
+  0% {
+    opacity: 0.2;
+  }
+  8% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+@-ms-keyframes buttonFlash {
+  0% {
+    opacity: 0.2;
+  }
+  8% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+@keyframes buttonFlash {
+  0% {
+    opacity: 0.2;
+  }
+  8% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}</pre>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">Q1</h2>
+          <div class="box tac bdb">
+            <p class="tac txt">
+            <b><span class="blue"><a href="mock/q1.html" class="txt-link" target="_blank
+            ">/mock/q1.html</a></span></b>
+            ロードすると、画像が順番にフェードインするようにしてください。</p>
+            <a class="txt-link" href="mock/answers/q1.html" target="_blank
+            ">完成イメージ</a>
+            </div>
+            <h4>ヒント</h4>
+            ・（前回より）ロードすると、&lt;body&gt;にloadクラスがつくので、それを利用すれば・・・？<br>
+            <div class="hint">
+            ・「フェードイン」はtransitionと、opacityを使えば・・・？<br>
+            ・「順番にフェードイン」ということは、transitionで遅延を指定すればいけそう・・・？
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">Q1アンサー例</h2>
+          <div class="box tac bdb">
+            <p class="w_50 txt">
+            <b><a target="_blank" href="mock/answers/q1.html" class="blue txt-link">/mock/answers/q1.html</a></b>
+            <pre class="tal">
+<span class="yellow">/* 画像のHTMLに、遅延の秒数を指定する */</span>
+div#slide div.h100 ul li.load_01{
+    opacity:0;
+    transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) <span class="yellow">1200ms</span>;
+    -webkit-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) <span class="yellow">1200ms</span>;
+    -moz-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) <span class="yellow">1200ms</span>;
+    -o-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) <span class="yellow">1200ms</span>;
+    -ms-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) <span class="yellow">1200ms</span>;
+}
+
+div#slide div.h100 ul li.load_02{
+    opacity:0;
+    transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) <span class="yellow">2200ms</span>;
+    -webkit-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) <span class="yellow">2200ms</span>;
+    -moz-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) <span class="yellow">2200ms</span>;
+    -o-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) <span class="yellow">2200ms</span>;
+    -ms-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) <span class="yellow">2200ms</span>;
+}
+
+div#slide div.h100 ul li.load_03{
+    opacity:0;
+    transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) <span class="yellow">3200ms</span>;
+    -webkit-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) <span class="yellow">3200ms</span>;
+    -moz-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) <span class="yellow">3200ms</span>;
+    -o-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) <span class="yellow">3200ms</span>;
+    -ms-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) <span class="yellow">3200ms</span>;
+}
+
+<span class="yellow">/* ロードした時にopacity:1;にする */</span>
+.load div#slide div.h100 ul li.load_01,
+.load div#slide div.h100 ul li.load_02,
+.load div#slide div.h100 ul li.load_03{
+    opacity:1;
+}</pre>
+            </div>
+            <h3 class="">ポイント</h3>
+            <p class="txt">はじめの&lt;body&gt;のフェードインに1200msかかるので、<br>
+            一番初めの画像のフェードインも少し遅らせる。</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">Q2</h2>
+          <div class="box tac bdb">
+            <p class="tac txt">
+            <b><span class="blue"><a href="mock/q2.html" class="txt-link" target="_blank
+            ">/mock/q2.html</a></span></b>
+            「2016 Autumn and Winter issue 」「by JOURNAL STANDARD relume」のサブコピーが、<br>
+            「左から」順番にフェードインするようにしてください。
+            </p>
+            <a class="txt-link" href="mock/answers/q2.html" target="_blank
+            ">完成イメージ</a>
+            </div>
+            <h4>ヒント</h4>
+            ・「フェードイン」は前回を参考に
+            <div class="hint">
+            ・「左から」はtransformを使えば・・？
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">Q2アンサー例</h2>
+          <div class="box tac bdb">
+            <p class="w_50 txt">
+            <b><a class="blue txt-link" target="_blank" href="mock/answers/q2.html">/mock/answers/q2.html</a></b>
+            <b><a class="blue txt-link" target="_blank" href="mock/answers/q2.css">/mock/answers/q2.css</a></b>
+            <pre class="tal">
+<span class="yellow">/* 「左から」フェードインさせるために、X軸の位置を20px左にずらしておく。 */</span>
+.main-text h1 .main-subtext li.trans{
+    opacity: 0;
+     -webkit-transform: translate3d(-20px, 0, 0);
+    -ms-transform: translate3d(-20px, 0, 0);
+    -moz-transform: translate3d(-20px, 0, 0);
+    transform: translate3d(-20px, 0, 0);
+}
+
+<span class="yellow">/* 遅延の設定 */</span>
+.main-text h1 .main-subtext li.trans1{
+    -webkit-transition:all 1000ms cubic-bezier(0.25, 0.1, 0.25, 1) 1200ms;
+    -ms-transition:all 1000ms cubic-bezier(0.25, 0.1, 0.25, 1) 1200ms;
+    -moz-transition:all 1000ms cubic-bezier(0.25, 0.1, 0.25, 1) 1200ms;
+    transition:all 1000ms cubic-bezier(0.25, 0.1, 0.25, 1) 1200ms;    
+}
+
+<span class="yellow">/* 遅延の設定 */</span>
+.main-text h1 .main-subtext li.trans2{
+    -webkit-transition:all 1000ms cubic-bezier(0.25, 0.1, 0.25, 1) 1800ms;
+    -ms-transition:all 1000ms cubic-bezier(0.25, 0.1, 0.25, 1) 1800ms;
+    -moz-transition:all 1000ms cubic-bezier(0.25, 0.1, 0.25, 1) 1800ms;
+    transition:all 1000ms cubic-bezier(0.25, 0.1, 0.25, 1) 1800ms;
+}
+
+<span class="yellow">/* ロード後に、X軸のずれを0にする */</span>
+.load .main-text h1 .main-subtext li.trans{
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}</pre>
+            </div>
+            <h3 class="">ポイント</h3>
+            <p class="txt">transform:translate3dで「左から」フェードインを表現する。もちろん、同じ方法で「上から」「下から」「右から」も可能。</p>
+            <p class="txt">Q1の遅延のテクニックと組み合わせると、<a class="txt-link" href="http://journal-standard.jp/relume/special/2016aw/life_is/issue10/" target="_blank
+            ">こう</a>なります</p>
+          </div>
+        </div>
+      </li>
+
+       <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">Q3</h2>
+          <div class="box tac bdb">
+            <p class="tac txt ">
+            <b><span class="blue"><a href="mock/q3.html" class="txt-link" target="_blank
+            ">/mock/q3.html</a></span></b>
+            ホバーエフェクトを作っていただきます。<br>
+            左：ホバーすると、画像がちょっと暗くなる。<br>
+            右：ホバーすると、画像がちょっと暗くなって「READ MORE」が下からフェードインする。<br>
+            中央：<a href="http://antigravite.jp/" target="_blank
+            " class="txt-link">Antigravite</a>のような感じで、ホバーすると線が出てくる。
+            </p>
+             <a class="txt-link" href="mock/answers/q3.html" target="_blank
+            ">完成イメージ</a>
+            </div>
+            <div class="box tac">
+            <h4 class="tac">ヒント</h4>
+            ・左：imageの下地の背景色を黒にして、ホバーでimageを透過させれば黒くなる？<br>
+            ・右：「下から」フェードインはtransformが使えそう。<br>
+            ・中央：ラインのwidth/heightにtransitionをあてれば・・・？
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">Q3アンサー例</h2>
+          <div class="box tac bdb">
+            <p class="w_50 txt">
+            <b><a href="mock/answers/q3.html" class="blue txt-link" target="_blank
+            ">/mock/answers/q3.html</a></b>
+            <b><a href="mock/answers/q3.css" class="blue txt-link" target="_blank
+            ">/mock/answers/css/q3.css</a></b>
+            <pre class="tal">
+/**
+ * animation
+ * -----------------------------------------------------------------------------
+ */
+ 
+ /* =============================================
+@共通
+============================================= */
+.pic .caption{
+    opacity: 0;
+}
+
+.pic img,
+.pic a:hover .caption{
+    opacity:1;
+}
+
+.pic .caption,
+.pic.type2 .line,
+.pic.type2 img{
+    -moz-transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -webkit-transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -ms-transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+}
+
+
+/* =============================================
+@type1 左
+============================================= */
+<span class="yellow">/*下地を黒くしておく*/</span>
+.pic.type1 .pic_inner{
+    background:#333;
+}
+
+.pic.type1 .pic_inner img{
+    opacity:1;
+    -moz-transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -ms-transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -webkit-transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+}
+<span class="yellow">/*下地の上のimageを透過させることで、暗くなる*/</span>
+.pic.type1 a:hover img{
+    opacity:0.6;
+}
+
+/* =============================================
+@type2 中央
+============================================= */
+.pic.type2 .pic_inner{
+    background:#333;
+}
+
+.pic.type2 .pic_inner img{
+    opacity:1;
+    -moz-transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -ms-transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -webkit-transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    transition:opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+}
+
+.pic.type2 a:hover img{
+    opacity:0.6;
+}
+
+<span class="yellow">/*ホバー前は見えないようにする*/</span>
+.pic.type2 .line-top,
+.pic.type2 .line-bottom{
+    width: 0;
+}
+
+.pic.type2 .line-left,
+.pic.type2 .line-right{
+    height: 0;
+}
+
+.pic.type2 a:hover img{
+    opacity:0.6;
+}
+
+<span class="yellow">/*ホバー時に長くする*/</span>
+.pic.type2 a:hover .line-top,
+.pic.type2 a:hover .line-bottom{
+    width: 90%;
+}
+
+.pic.type2 a:hover .line-left,
+.pic.type2 a:hover .line-right{
+    height: 90%;
+}
+
+/* =============================================
+@type3 右
+============================================= */
+.pic.type3 .pic_inner{
+    background:#333;
+}
+
+.pic.type3 .pic_inner img{
+    opacity:1;
+    -moz-transition:opacity 2000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -ms-transition:opacity 2000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -webkit-transition:opacity 2000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    transition:opacity 2000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+}
+
+.pic.type3 a:hover img{
+    opacity:0.6;
+}
+
+<span class="yellow">/*下からフェードインのため、transformを設定する*/</span>
+.pic.type3 .caption{
+    opacity:0;
+    -moz-transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -ms-transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -webkit-transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    transition:all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
+    -webkit-transform:translate3d(0,10px,0);
+    -moz-transform:translate3d(0,10px,0);
+    -ms-transform:translate3d(0,10px,0);
+    transform:translate3d(0,10px,0);
+}
+
+.pic.type3 a:hover .caption{
+    opacity:1;
+    -webkit-transform:translate3d(0,0,0);
+    -moz-transform:translate3d(0,0,0);
+    -ms-transform:translate3d(0,0,0);
+    transform:translate3d(0,0,0);
+}</pre>
+            </div>
+            <h3 class="">ポイント</h3>
+            <p class="txt">transform:translate3dで「左から」フェードインを表現する。もちろん、同じ方法で「上から」「下から」「右から」も可能。</p>
+            <p class="txt">Q1の遅延のテクニックと組み合わせると、<a class="txt-link" href="http://journal-standard.jp/relume/special/2016aw/life_is/issue10/" target="_blank
+            ">こう</a>なります</p>
+          </div>
+        </div>
+      </li>
+
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5"> CSS便利</h2>
+          <div class="box tac mb0">
+            <p class="w_50 txt">しかし・・・できないこともある</p>
+          </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+            <h2 class="tac pt5">CSSでできないこと 1</h2>
+            <div class="box tac bdb">
+              <p class="w_50 txt">CSS transitionが<span class="red">効かない</span>時<br>
+              CSS transitionでアニメーションできないプロパティもあります</p>
+            </div>
+            <h3>例</h3>
+            <p class="txt w_50 tac">display,position, background-image等</p>
+            <p class="txt w_50 tac">
+              ・display:block→display:noneにしたい<br>
+              ・position:relative→position:fixedにしたい
+            </p>
+          </div>
+        </div>
+      </li>
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">Q4</h2>
+          <div class="box tac mb0">
+            <p class="tac txt">
+            <b><span class="blue"><a href="mock/q4.html" class="txt-link" target="_blank
+            ">/mock/q4.html</a></span></b>
+            <a href="http://www.one-day.jp/" class="txt-link" target="_blank
+            ">Oneday</a>のように、スクロールが始まると、<br>
+            MVがシャッ！！とあがるようにしてください。<br>
+            これはJSを使わないとできないので、次のページの回答を見て作ってみてください。
+            </p>
+            <a class="txt-link" href="mock/answers/q4.html" target="_blank
+            ">完成イメージ</a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">Q4アンサー例</h2>
+          <div class="box tac bdb">
+            <p class="w_50 txt">
+            <b><a class="blue txt-link" href="/mock/answers/q4.html" target="_blank
+            ">/mock/answers/q4.html</a></b>
+            <h3>q4.html</h3>
+            <pre class="tal">
+&#x3C;section class=&#x22;animate_cover&#x22;&#x3E;
+&#x3C;!-- &#x3044;&#x3064;&#x3082;&#x306E;MV&#x306E;&#x30E9;&#x30C3;&#x30D1;&#x30FC;&#x3092;&#x3001;&#x65B0;&#x3057;&#x3044;&#x30E9;&#x30C3;&#x30D1;&#x30FC;&#x3067;&#x56F2;&#x307F;&#x3001;animate_cover&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4ED8;&#x4E0E;&#x3059;&#x308B;&#x3002; --&#x3E;
+  &#x3C;div id=&#x22;mv&#x22;&#x3E;
+    &#x3C;div id=&#x22;slide&#x22;&#x3E;
+      &#x3C;div class=&#x22;slide_wrap&#x22;&#x3E;
+        &#x3C;ul&#x3E;
+          &#x3C;li style=&#x22;background-image: url(http://www.one-day.jp/img/top/pic_tobira26_1.jpg); background-size: cover;&#x22;&#x3E;&#x3C;/li&#x3E;
+          &#x3C;li style=&#x22;background-image: url(http://www.one-day.jp/img/top/pic_tobira26_2.jpg); background-size: cover;&#x22;&#x3E;&#x3C;/li&#x3E;
+          &#x3C;li style=&#x22;background-image: url(http://www.one-day.jp/img/top/pic_tobira26_3.jpg); background-size: cover;&#x22;&#x3E;&#x3C;/li&#x3E;
+          &#x3C;li style=&#x22;background-image: url(http://www.one-day.jp/img/top/pic_tobira26_4.jpg); background-size: cover;&#x22;&#x3E;&#x3C;/li&#x3E;
+        &#x3C;/ul&#x3E;
+      &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;h1&#x3E;
+     &#x3C;!--  ...logo svg image ... --&#x3E;
+    &#x3C;/h1&#x3E;
+  &#x3C;/div&#x3E;&#x3C;/section&#x3E;
+            </pre>
+            <h3>q4.css</h3>
+            <pre class="tal">
+<span class="yellow">/* .animate_coverにfixedをかけ、z-indexで一番手前にもってくる */</span>
+.animate_cover{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    z-index:9999;
+    background:#fff;
+}
+
+<span class="yellow">/* 親にfixedをかけたことで、子要素の幅と高さがなくなるので、heightを設定する */</span>
+.animate_cover #mv,
+.animate_cover #slide,
+.animate_cover #slide li{
+    width: 100%;
+    height: 100%;
+}
+</pre>
+            </div>
+             <h3>common.js</h3>
+             今回配布した<a href="mock/js/common.js" class="txt-link" target="_blank
+             ">/mock/js/common.js</a>を使用する。
+             <pre>
+<span class="yellow">// ******* Animate coverの秒数を指定する(/ms)</span>
+var AnimateCoverDuration = 500;
+<span class="yellow">// ******* Animate coverのイージングを↓より指定する</span>
+<span class="yellow">// @link http://semooh.jp/jquery/cont/doc/easing/</span>
+var AnimateCoverEasing = 'linear';
+             </pre>
+          </div>
+        </div>
+      </li>
+      
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">CSSでできないこと 2</h2>
+          <div class="box tac bdb">
+            <p class="w_50 txt">マウスに反応するなどインタラクティブ系</p>
+            <a href="http://motomachi.art-marche.jp/" class="txt-link" target="_blank
+            ">陶器祭</a><br>
+            <a href="http://www.art-marche.jp/2014/" target="_blank
+            " class="txt-link">KAM2014-2017</a><br>
+            <a href="http://okisogo-law.jp/" target="_blank
+            " class="txt-link">沖総合法律事務所</a>
+          </div>
+          <h3>インタラクティブな表現を必要とされるモックもあると思うので、<br>
+          その際は無理せずコーダーにご相談ください◎</h3>
+        </div>
+      </li>
+
+      <li class="page">
+        <div class="page_wrap d_table">
+          <div class="d_cell">
+          <h2 class="tac pt5">まとめ</h2>
+          <div class="box tac bdb">
+            <p class="w_50 txt">今日学んだ技術で以下のサイトに（近いものが）<br>作れる・・・はず？？</p>
+            <a href="http://www.elegance-cosmetics.com/" class="txt-link" target="_blank
+            ">Elegance</a><br>
+            <a href="http://odashi.com/" class="txt-link" target="_blank
+            ">うねの</a><br>
+            <a href="http://joen-ji.or.jp/" class="txt-link" target="_blank
+            ">浄円寺</a><br>
+            <a href="https://dariocalonaci.com/" class="txt-link" target="_blank
+            ">こんなホバー</a><br>
+            <a href="http://odashi.com/" class="txt-link" target="_blank
+            ">あんなホバー</a><br>
+            などなど
+          </div>
+          <h3>
+          「〜なエフェクトを作るには、CSS/JSの〜を使えばいい」<br>
+          <span class="red">「思いつくかどうか」</span>が大事。慣れが必要</h3>
+        </div>
+      </li>
+
+      <li class="page">
+      <div class="page_wrap d_table">
+        <div class="d_cell">
+          <h2 class="tac pt5">まとめ</h2>
+          <div class="box tac bdb">
+            <p class="w_50 txt">イージングの重要さ</p>
+            <a class="txt-link" href="http://joen-ji.or.jp/" target="_blank
+            ">本家</a><br>
+            <a class="txt-link"  href="joen-example.html" target="_blank
+            ">イージングがlinearのまま</a>
+          </div>
+          <h3>
+          ・シンプルなエフェクトでも、イージングを工夫することで深みが出る<br>
+          ・transitionの秒数 / 遅延も大事</h3>
+        </div>
+      </div>
+      </li>
+
+      <li class="page">
+      <div class="page_wrap d_table">
+        <div class="d_cell">
+          <h2 class="tac">おわり</h2>
+          <div class="box tac mb0 pb0">
+            <p class="w_50 txt mb0 pb0">質疑応答タイム</p>
+        </div>
+      </div>
+      </li>
+
+    </ul>
+    </div>
+  </div>
+  </div>
+</div>
+<script src="js/jquery-1.10.2.min.js"></script> 
+<script src="js/common.js"></script> 
+<script src="js/slide.js"></script> 
+</body>
+</html>
