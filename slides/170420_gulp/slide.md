@@ -52,10 +52,11 @@ Gulpでコレが全部できる訳ではなく・・・<br />
 
 ![ダウンロード.png](https://qiita-image-store.s3.amazonaws.com/0/77729/1344be4c-61a5-f97f-b373-e895fe875121.png "ダウンロード.png")
 
-node.js という言語で書かれた便利ツール達の倉庫です。
-* Javascriptだけども、「CommonJS」という仕様で書かれているので、普通のJSとはビミョーに違う（後述）
-* nodejsでプラグインを書くと、ここに登録できる。
-* 全世界の技術者がダウンロードできる。
+node.js という言語で書かれた便利ツール達の倉庫です。	
+
+* Javascriptだけども、「CommonJS」という仕様で書かれているので、普通のJSとはビミョーに違う（後述）	
+* nodejsでプラグインを書くと、ここに登録できる。	
+* 全世界の技術者がダウンロードできる。	
 
 興味があれば、[この記事](http://qiita.com/megane42/items/2ab6ffd866c3f2fda066)をどうぞ
 
@@ -98,13 +99,13 @@ gulp.task('js', function() {
 ---
 
 ## require???import???
-gulpfile.jsの中身が、なんか普通のJSと違うんですけど・・・・
-そうです、（基本的に）CommonJSという仕様で書かれています。
+gulpfile.jsの中身が、なんか普通のJSと違うんですけど・・・・	
+そうです、（基本的に）CommonJSという仕様で書かれています。	
 
-詳しい記事は[ここ](https://www.slideshare.net/terurou/common-js)
+詳しい記事は[ここ](https://www.slideshare.net/terurou/common-js)	
 
-gulpやwebpack以外では今すぐ使うことはないかもなので、
-gulpfile.jsの改造をしたい場合のみ、気に留めておいてください。
+gulpやwebpack以外では今すぐ使うことはないかもなので、	
+gulpfile.jsの改造をしたい場合のみ、気に留めておいてください。	
 
 ---
 
@@ -116,8 +117,10 @@ https://github.com/nnishimura/namplate/wiki/Git&Gulp-%E3%82%BB%E3%83%83%E3%83%88
 
 ## gulpをグローバルと、ローカルにインストールする。
 
+```
 $ npm install gulp -g
 $ npm install gulp@3.9.0 --save-dev
+```
 
 バージョンを指定してインストールするのがミソです
 
@@ -132,6 +135,7 @@ node.jsはかなり頻繁にアップデートが入るので、
 
 NVM (node version manager)
 
+---
 
 ## NVM経由でnode.jsをインストールする
 
@@ -142,29 +146,38 @@ $ git clone https://github.com/creationix/nvm.git ~/.nvm
 $ source ~/.nvm/nvm.sh
 $ nvm -v
 ```
+---
+
 node.js v0.12.9をインストールします。
 node -vで0.12.9がかえってくればOK
+
 
 ```
 $ nvm install 0.12.9
 $ node -v
 
 ```
+---
 
 ターミナルを終了しても、nvmが起動するように、下記を
 ~（ホームディレクトリ）/.bash_profileに追記する。
+
 
 ```sh:.bash_profile
 if [[ -s /Users/ホームディレクトリ/.nvm/nvm.sh ]] ; then source /Users/ホームディレクトリ/.nvm/nvm.sh ; fi
 
 ```
 
+---
+
 ターミナルを再起動して、
 ```
 $ node -v
 
 ```
+
 がエラーにならなければオッケー
+
 
 ---
 
@@ -209,8 +222,8 @@ node のバージョンを切り替える。
 $ nvm use v0.12.9
 
 ```
-ホントに、これで８割方解決します。
-※一度間違ったバージョンで```npm install```してしまった場合は、
+ホントに、これで８割方解決します。	
+※一度間違ったバージョンで```npm install```してしまった場合は、	
 node_modulesを全部消した上で、もう一度```npm install```しましょう。
 
 ---
@@ -225,9 +238,8 @@ node_modulesを全部消した上で、もう一度```npm install```しましょ
 例：unmet dependency
 ![2.png](https://qiita-image-store.s3.amazonaws.com/0/77729/29cd5927-8338-2470-7e4b-9437bc16f5cc.png "2.png")
 
-依存関係が満たされていないよということ
-必要なモジュールがインストールされてないよ
-
+- 依存関係が満たされていないよということ
+- 必要なモジュールがインストールされてないよ
 - package.jsonが間違えている
 - エラーメッセージに書いてあるモジュールを、手動でインストールする
 
@@ -259,14 +271,14 @@ http://qiita.com/M-ISO/items/d693ac892549fc95c14c
 
 1. node/gulpのバージョンがプロジェクト毎に指定されているバージョンと違っていないか確認する
 
-2. エラーを読んで、どういう種類のエラーなのか理解する。
-この記事に対処法が載っていることが多いです
-http://qiita.com/M-ISO/items/d693ac892549fc95c14c
+2. エラーを読んで、どういう種類のエラーなのか理解する。	
+この記事に対処法が載っていることが多いです	
+http://qiita.com/M-ISO/items/d693ac892549fc95c14c	
 
-3. エラーの内容はわかったけど、どうやって直せば良いか分からない
-エラーメッセージをgoogle検索する。大野さんに聞く。とりあえず置いといて、時間がある時に調べる。etc
-※nodeのバージョンが低いので（v0.12.9）どうしようもないエラーが出る場合があります。将来的にnodeのバージョンをあげる必要がありますが、
-SCSSをコンパイルする等シンプルなタスクだとあまりバグりません。
+3. エラーの内容はわかったけど、どうやって直せば良いか分からない	
+エラーメッセージをgoogle検索する。大野さんに聞く。とりあえず置いといて、時間がある時に調べる。etc	
+※nodeのバージョンが低いので（v0.12.9）どうしようもないエラーが出る場合があります。将来的にnodeのバージョンをあげる必要がありますが、	
+SCSSをコンパイルする等シンプルなタスクだとあまりバグりません。	
 npmのプラグインによっては最新のnode下でしか動かないこともあるので、注意が必要です。
 
 ---
