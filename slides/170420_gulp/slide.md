@@ -1,5 +1,5 @@
-# 快適なGulpライフのために
-
+## 快適なGulpライフのために
+## @nnishimura
 
 ---
 
@@ -9,41 +9,35 @@
 
 ![antigravite2_—_open_◂_gulp_MANPATH__Users_fsimg__nvm_versions_node_v6_3_0_share_man__usr_local_share_man_ja__usr_local_share_man__usr_share_man__opt_X11_share_man__Applications_Xcode_app_Contents_Developer_Platforms_MacOSX_platform_Develope.png](https://qiita-image-store.s3.amazonaws.com/0/77729/3439778a-0bcf-05c9-86d4-3c2928254562.png "antigravite2_—_open_◂_gulp_MANPATH__Users_fsimg__nvm_versions_node_v6_3_0_share_man__usr_local_share_man_ja__usr_local_share_man__usr_share_man__opt_X11_share_man__Applications_Xcode_app_Contents_Developer_Platforms_MacOSX_platform_Develope.png")
 
---
+---
 
 * gulpがエラーが出て動かない
 * =SCSSがコンパイルできない
 * 仕事ができない！！！！
 
---
+---
 
-* 予想外のエラーが起きても、ある程度対処できるようにしたい
+* 予想外のエラーが起きても、ある程度対処したい
 * チームメイトとのgulp案件の受け渡しをスムーズに
-* gulpを理解して使いたい
-
---
-
-## そもそもgulpとは
-
---
-
-### 人の手で作業すると面倒なものを自動化する
-* SCSSを更新したら、それをコンパイルして/cssフォルダに出したい。gulp-sass
-* JSを更新したら、勝手に圧縮して/cssフォルダに出したい。gulp-uglify
-* ファイルを更新したら、ローカルサーバーも自動で更新してほしい。browsersync
+* gulpを改造できるように
 
 ---
 
-### 人の手で作業すると面倒なものを自動化する
-* JSをES6で書いたので、ES5にして古いブラウザにも対応してほしい。gulp-babel
-* SCSSがエラー出てコンパイルが止まったら、アラートを出して教えてほしい。gulp-notify
-* ファイルを更新したら、ローカルサーバーも自動で更新してほしい。browsersync
+## そもそもgulpとは
+
+---
+
+### タスクランナー
+* SCSSををコンパイルして/cssフォルダに保存したい。**gulp-sass**
+* JSを圧縮して/jsフォルダに保存したい。**gulp-uglify**
+* JSをES6で書いたので、ES5にして古いブラウザにも対応してほしい。**gulp-babel**
+* SCSSがエラー出てコンパイルが止まったら、アラートを出して教えてほしい。**gulp-notify**
+* ファイルを更新したら、ローカルサーバーも自動で更新してほしい。**browsersync**
 
 ---
 
 ### Gulp+プラグイン = 動く
-Gulpでコレが全部できる訳ではなく・・・<br />
-「npm」というプラグインの倉庫からインストールする必要があります。<br />
+「npm」というパッケージマネージャーからプラグインをインストールする必要があります。<br />
 ・・・npm？
 
 ---
@@ -52,29 +46,30 @@ Gulpでコレが全部できる訳ではなく・・・<br />
 
 ![ダウンロード.png](https://qiita-image-store.s3.amazonaws.com/0/77729/1344be4c-61a5-f97f-b373-e895fe875121.png "ダウンロード.png")
 
-node.js という言語で書かれた便利ツール達の倉庫です。	
+node.js という言語で書かれた便利ツール達の倉庫です。
 
-* Javascriptだけども、「CommonJS」という仕様で書かれているので、普通のJSとはビミョーに違う（後述）	
-* nodejsでプラグインを書くと、ここに登録できる。	
-* 全世界の技術者がダウンロードできる。	
-
+* Javascriptだけども、「CommonJS」という仕様で書かれているので、普通のJSとはビミョーに違う（後述）
+* nodejsでプラグインを書くと、ここに登録できる。
+* 全世界の技術者がダウンロードできる。
+<br />
 興味があれば、[この記事](http://qiita.com/megane42/items/2ab6ffd866c3f2fda066)をどうぞ
 
 ---
 
 ## 例えば
 
-gulpを一番初めに動かす時打つ、このコマンドですが
 
 ```sh
 $ npm install
 
 ```
-npmから、package.jsonにかかれているプラグイン（モジュール）を<br />
-すべてDLしてください！<br />
-というコマンドです。
 
---
+訳：<br />
+npmから、package.jsonにかかれているプラグインを<br />
+すべてDLしてください！<br />
+
+
+---
 
 ## npm install => gulp
 DLしてきたプラグインたちをgulpが動かします。
@@ -99,19 +94,33 @@ gulp.task('js', function() {
 ---
 
 ## require???import???
-gulpfile.jsの中身が、なんか普通のJSと違うんですけど・・・・	
-そうです、（基本的に）CommonJSという仕様で書かれています。	
+なんか普通のJSと違うんですけど・・・・ <br>
+そうです、CommonJSの仕様で書かれています。<br><br>
 
-詳しい記事は[ここ](https://www.slideshare.net/terurou/common-js)	
+※正確に言うとCommonJSの仕様からは外れているそうなので、  <br>
+そこらへんの話が気になるなら
+<br><br>
 
-gulpやwebpack以外では今すぐ使うことはないかもなので、	
-gulpfile.jsの改造をしたい場合のみ、気に留めておいてください。	
+* [最初の方にCommonJS解説](https://www.slideshare.net/terurou/common-js)
+* [JSモジュールシステムの歴史と現状](http://qiita.com/mizchi/items/6b569cc75dbcc26a1f15)
+* [CommonJS.orgのエンジニアさんの説明](https://www.slideshare.net/kriskowal/commonjs-javascript-everywhere?next_slideshow=1)
+
+<br><br>
 
 ---
 
-## 実践編 -gulpをインストール
-ココ！見てね！！
-https://github.com/nnishimura/namplate/wiki/Git&Gulp-%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97
+## commonJS
+
+便利です
+
+---
+
+## node/gulp環境のsetup
+
+
+江口さん/堀内さん/岩田さんのPCに<br />環境構築した一連の手順です
+
+* [セットアップの手順](https://github.com/nnishimura/namplate/wiki/Git&Gulp-%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97)
 
 ---
 
@@ -120,9 +129,11 @@ https://github.com/nnishimura/namplate/wiki/Git&Gulp-%E3%82%BB%E3%83%83%E3%83%88
 ```
 $ npm install gulp -g
 $ npm install gulp@3.9.0 --save-dev
+
 ```
 
-バージョンを指定してインストールするのがミソです
+バージョンを指定してインストールするのがミソです  
+※[`--save-dev`って何](http://qiita.com/msakamoto_sf/items/a1ae46979a42d6948ebd#--save----save-dev----save-optional-%E3%81%AE%E9%81%95%E3%81%84)
 
 ---
 
@@ -148,12 +159,13 @@ $ nvm -v
 ```
 ---
 
-node.js v0.12.9をインストールします。
-node -vで0.12.9がかえってくればOK
+node.jsをインストールします。
+** バージョンを指定します。 **
+node -vでバージョンがかえってくればOK
 
 
 ```
-$ nvm install 0.12.9
+$ nvm install 6.0.0
 $ node -v
 
 ```
@@ -191,14 +203,6 @@ $ gulp
 
 ---
 
-## nodeの最新版（v7.0---）が入っちゃった、nvmも入れてないよ
-先にインストールされたnode.jsを削除する必要があります。
-
-## v0.12.9古すぎる、アップデートしたいです
-良いと思います。
-ただ、チームメイト全員がアップデートする/ バージョンを切り替える必要があります。
-
----
 
 ## エラーが出た、その前に
 個人的に、実務でgulpがコケるのは80%くらいnode.jsのバージョン違いが原因。
@@ -219,12 +223,12 @@ $ nvm ls
 node のバージョンを切り替える。
 
 ```
-$ nvm use v0.12.9
+$ nvm use v6.0.0
 
 ```
-ホントに、これで８割方解決します。	
-※一度間違ったバージョンで```npm install```してしまった場合は、	
-node_modulesを全部消した上で、もう一度```npm install```しましょう。
+ホントに、これで８割方解決します。<br>
+※一度間違ったバージョンで```npm install```してしまった場合は、  <br>
+node_modulesを全部消した上で、もう一度```npm install```しましょう。  
 
 ---
 
@@ -235,7 +239,7 @@ node_modulesを全部消した上で、もう一度```npm install```しましょ
 
 
 ## ケース１：npm installでコケる
-例：unmet dependency
+例：`unmet dependency`
 ![2.png](https://qiita-image-store.s3.amazonaws.com/0/77729/29cd5927-8338-2470-7e4b-9437bc16f5cc.png "2.png")
 
 - 依存関係が満たされていないよということ
@@ -243,24 +247,56 @@ node_modulesを全部消した上で、もう一度```npm install```しましょ
 - package.jsonが間違えている
 - エラーメッセージに書いてあるモジュールを、手動でインストールする
 
---
+---
 
 ## ケース２：gulpでコケる
-例：Error: listen EADDRINUSE :::4000
+例：`Error: listen EADDRINUSE :::4000`
+<br>
+こちらは何回もgulpが走ってlocalサーバーが何個も立ち上がっている時にも起こります。<br>
+更新の度、同じポートを使って新たにサーバー立ち上げようとするから起こるみたい。<br><br>
 
-こちらは何回もgulpが走ってlocalサーバーが何個も立ち上がっている時にも起こります。更新の度、同じポートを使って新たにサーバ
-ー立ち上げようとするから起こるみたい。
-
-- ブラウザを1回全部閉じて再起動。
+- 他に立ち上がっているlocalサーバー全部閉じて再起動。
 - ポートが使われているのでプロセスを切る(わからなかったらターミナルも再起動)
 
 
 ---
 
+
+## ケース３：npm installでコケる　その２
+例：unmet dependency
+![2.png](https://qiita-image-store.s3.amazonaws.com/0/77729/29cd5927-8338-2470-7e4b-9437bc16f5cc.png "2.png")
+
+nodeのバージョン変えて再インストールしても、ずっと`unmet dependency`
+キャッシュを消す
+
+```
+$ npm cache clean
+
+```
+
+---
+
 ## その他
 
-神記事
-http://qiita.com/M-ISO/items/d693ac892549fc95c14c
+神記事<br />
+http://qiita.com/M-ISO/items/d693ac892549fc95c14c<br /><br />
+---
+
+## Q.
+## nodeの最新版（v7.0---）が入っちゃった、nvmも入れてないよ
+先にインストールされたnode.jsを削除する必要があります。
+
+---
+
+## Q.
+## v0.12.9古すぎる、アップデートしたいです
+お願いします。
+私がv0.12=>v6にした時はエラーの嵐だったので、    
+当方の環境ではうまく動いたgulp/webpack開発環境テンプレを挙げておきます。
+
+* [gulp & webpack環境](https://bitbucket.org/fullsizeimage/sunart/src)
+* [LIGで実際に使われているフロントエンドテンプレート](https://github.com/frontainer/frontplate)
+LIG用にアレンジされているのでこのままでは使いにくかった
 
 ---
 
@@ -271,17 +307,15 @@ http://qiita.com/M-ISO/items/d693ac892549fc95c14c
 
 1. node/gulpのバージョンがプロジェクト毎に指定されているバージョンと違っていないか確認する
 
-2. エラーを読んで、どういう種類のエラーなのか理解する。	
-この記事に対処法が載っていることが多いです	
-http://qiita.com/M-ISO/items/d693ac892549fc95c14c	
+2. エラーを読んで、どういう種類のエラーなのか**理解する。**
+この記事に対処法が載っているかもしれない
+http://qiita.com/M-ISO/items/d693ac892549fc95c14c
 
-3. エラーの内容はわかったけど、どうやって直せば良いか分からない	
-エラーメッセージをgoogle検索する。大野さんに聞く。とりあえず置いといて、時間がある時に調べる。etc	
-※nodeのバージョンが低いので（v0.12.9）どうしようもないエラーが出る場合があります。将来的にnodeのバージョンをあげる必要がありますが、	
-SCSSをコンパイルする等シンプルなタスクだとあまりバグりません。	
-npmのプラグインによっては最新のnode下でしか動かないこともあるので、注意が必要です。
+3. エラーの内容はわかったけど、どうやって直せば良いか分からない
+ググる。stackoverflow OR Qiita。放置して時間がある時に調べる。諦める。大野さんに聞く。
 
 ---
+
 
 間違いもあったかもしれませんが、、、
 
@@ -289,6 +323,4 @@ npmのプラグインによっては最新のnode下でしか動かないこと�
 
 ---
 
-## END
-
----
+## おわり
