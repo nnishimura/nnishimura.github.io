@@ -191,6 +191,7 @@ $ node -v
 
 ## gulpをグローバルと、ローカルにインストールする。
 
+
 ```
 $ npm install gulp@3.9.0 -g
 $ npm install gulp@3.9.0 --save-dev
@@ -198,6 +199,7 @@ $ npm install gulp@3.9.0 --save-dev
 ```
 
 * `-g`の時、`sudo`をつけないとインストールできないかもしれない。
+* 現在は推奨されるinstall方法が変わったようです。[公式](http://gulpjs.com/)
 
 バージョンを指定してインストールするのがミソです  
 ※[`--save-dev`って何](http://qiita.com/msakamoto_sf/items/a1ae46979a42d6948ebd#--save----save-dev----save-optional-%E3%81%AE%E9%81%95%E3%81%84)
