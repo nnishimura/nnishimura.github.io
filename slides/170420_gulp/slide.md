@@ -386,6 +386,7 @@ $nvm use vXXXX
 ---
 
 ## まとめ
+
 <br /><br />
 エラーが起こった時
 1.〜3.を順番に確認してみてください。<br /><br />
@@ -396,6 +397,10 @@ $nvm use vXXXX
 
 3. **ググる。**stackoverflow OR Qiita。放置して時間がある時に調べる。諦める。大野さんに聞く。
 [この記事](http://qiita.com/M-ISO/items/d693ac892549fc95c14c)に対処法が載っているかもしれない
+
+---
+
+![My_Clips_by_Naoko_Nishimura.png](https://qiita-image-store.s3.amazonaws.com/0/77729/4226bcfc-9e22-6209-e1c4-001e4443e415.png "My_Clips_by_Naoko_Nishimura.png")
 
 ---
 
