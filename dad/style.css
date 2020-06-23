@@ -1,0 +1,59 @@
+blockquote {
+    position: relative;
+    padding: 10px 15px 10px 50px;
+    box-sizing: border-box;
+    font-style: italic;
+    background: #efefef;
+    color: #555;
+    width: 100% !important;
+}
+
+blockquote:before{
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: -3px;
+    content: "“";
+    font-family: sans-serif;
+    color: #cfcfcf;
+    font-size: 90px;
+    line-height: 1;
+}
+
+blockquote p {
+    padding: 0;
+    margin: 10px 0;
+    line-height: 1.7;
+}
+
+blockquote cite {
+    display: block;
+    text-align: right;
+    color: #888888;
+    font-size: 0.9em;
+}
+
+img {
+  max-height: 100vh;
+  width: auto;
+}
+
+ul {
+  margin-top: 30px;
+}
+
+ul li {
+  font-size: 34px;
+  margin-top: 20px;
+}
+
+h5 {
+  font-size: 30px;
+  margin-top: 20px !important;
+}
+
+h6 {
+  font-size: 30px;
+  font-weight: normal;
+  margin-top: 20px !important;
+}
