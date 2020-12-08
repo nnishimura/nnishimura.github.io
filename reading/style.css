@@ -67,3 +67,12 @@ h6 {
 .books {
   margin-top: 20px;
 }
+
+strong {
+  color: #DB1B1B;
+}
+
+.lists {
+  display: flex;
+  flex-direction: row;
+}

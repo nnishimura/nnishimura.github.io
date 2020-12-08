@@ -1,0 +1,95 @@
+<!-- classes: end start -->
+# 🤖 Automation test with cypress
+
+---
+<!-- classes: title -->
+
+## The Talk is About...
+
+* **What** is cypress?
+* **How** can we use it?
+
+
+---
+<!-- classes: title -->
+
+## Cypress is...**Automation Testing Tool**
+
+import { Img } from '@fusuma/client';
+
+<Img src="https://buddy.works/blog/thumbnails/cypress-cover.png?123" height="200" />
+
+---
+<!-- classes: title -->
+
+## What it actually does
+
+* **Automates browser**
+* screenshots + videos
+* time travel
+* real time reloads
+* spies, stubs, and clocks
+* automatic waiting (= no flaky tests!!)
+* and so on...
+
+<!-- note
+-->
+
+---
+<!-- classes: title -->
+
+## Example
+
+```
+// visits URL /campaigns/create
+cy.visit('/campaigns/create');
+
+// type text in input field
+cy.get('[data-testid="campaignName"]').type("Campaign title test");
+
+// clicks load button
+cy.get('[data-testid="loadButton"]').click();
+```
+
+<!-- note
+Example for browser automation
+cy.get: targets element
+clicks on an element
+-->
+
+---
+
+<!-- classes: title -->
+## Stubbing network call example
+
+```
+cy.server(); // tell cypress to start listening to network call
+
+// load mock response json file
+cy.fixture('getContractId.json').then((response) => {
+    // listen to getContractId API call and stub response
+    cy.route({
+        method: "POST",
+        url: '/api/contract/getContractId',
+        response
+    }).as("getContractId");
+});
+```
+
+<!-- note
+Example for stubbing API call
+Whenever we call API, the response will be the content of getContractId.json
+-->
+
+---
+<!-- classes: title -->
+
+## Timetravel
+
+<Img src="https://user-images.githubusercontent.com/6326478/101461566-6d755280-397e-11eb-954f-e0573289f2d4.png
+?aa" height="100px" />
+
+---
+<!-- classes: end -->
+# Demo
+## Let's dive into more details

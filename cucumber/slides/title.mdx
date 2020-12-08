@@ -1,0 +1,62 @@
+## Writting a better cucumber
+
+```
+Given I install the app
+And I type "080802432" in mdn field
+And I type "kddi0077" in password field
+And I press "ok" button
+When I see privacy policy page
+And I check on the agree on terms checkbox
+And I press "next" button
+....
+Then I should be on home screen 
+```
+
+---
+
+## Describe behaviour
+
+```
+Given I am logged in as "tsukasapo" user 
+And I complete the provisioning
+Then I should see home screen
+```
+
+---
+
+## Why descrative style?
+
+* Easy to understand
+* Easy to reuse
+* Resilient to UI changes
+
+<!-- note
+remember this will be used and read by other ppl
+-->
+
+---
+
+## More example
+
+```
+Scenario: I can create a campaign
+  Given I visit "/campaigns/create"
+  When I type "campaign12324" in the campaign name field
+  And I select "alert" category in the campaign category field
+  And I type "campaign test" in the notification title field
+  ....
+  Then I should see "Success! Campaign was created" on "/campaigns/create/summary"
+```
+
+---
+
+## Keep scenario short and sweet
+
+```
+Scenario: I can create a campaign
+  When I set content information
+  And I set segmentation details
+  And I set delivery schedule 
+  And I schedule a campaign 
+  Then I should see success message
+```
