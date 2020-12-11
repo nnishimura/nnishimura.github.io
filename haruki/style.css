@@ -1,0 +1,108 @@
+:root {
+    --main-color: #3498db;
+    --sub-color: #ff874d;
+    --green-color: #60d7a9;
+    --white-color: #fff;
+    --black-color: #464646;
+    --gray-color: #545454;
+    --skin-color: #ffcc99;
+    --color: #7bb7fa;
+    --mask: linear-gradient(red, rgba(0, 0, 0, 0.45));
+  }
+  
+  h2 {
+    color: var(--main-color);
+    margin-bottom: 30px;
+  }
+  
+  a {
+    color: var(--color);
+  }
+  
+  body {
+    /* common background color */
+    background: var(--white-color);
+  }
+
+  /* .bg {
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 100%;
+	height: 100vh;
+	transform: rotate(45deg);
+	background: var(--white-color);
+    filter: contrast(5);
+    z-index: -1;
+}
+
+.bg:before {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: radial-gradient(#333, transparent) 0 0/ 1em 1em space;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    content: '';
+} */
+  
+  .title {
+    background: var(--black-color);
+    color: var(--main-color);
+  }
+  
+  .section-title {
+    background: var(--gray-color);
+    color: var(--skin-color);
+  }
+  
+  .end {
+    color: var(--sub-color);
+    background-image: linear-gradient(var(--black-color), var(--black-color)),
+      url('https://media.giphy.com/media/ass2cYPZuBQ1q/giphy.gif');
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .link {
+    color: var(--sub-color);
+  }
+  
+  .presenter-host {
+    width: 70%;
+  }
+
+  pre {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* overwrite */
+  .grid {
+    width: 100%;
+  }
+  
+  span.title {
+    background: inherit;
+  }
+  
+  .end {
+    color: var(--white-color);
+    background-image: linear-gradient(var(--black-color), var(--black-color)),
+      url('https://media.giphy.com/media/q7UpJegIZjsk0/giphy.gif');
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .start {
+    color: var(--white-color);
+    background-image: linear-gradient(var(--black-color), var(--black-color)),
+      url('https://media.giphy.com/media/1nR6fu93A17vWZbO9c/giphy.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .overlay {
+    background: transparent !important;
+}
