@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/nnishimura/nnishimura.github.io#readme",
   "devDependencies": {
+    "@fusuma/task-pdf": "^1.16.0",
     "fusuma": "^1.16.0"
   }
 }
